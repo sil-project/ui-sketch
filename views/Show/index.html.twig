@@ -1,0 +1,17 @@
+{% extends "@Template/Layout/index.html.twig" %}
+
+{% block content %}
+
+    {% block page_header %}
+        <h1 class="ui header">
+            <i class="rounded sticky {{page.header.icon}} outline icon"></i>
+            <div class="content">
+                {{ page.header.title}}
+                <div class="sub header">{{ page.header.description}}</div>
+            </div>
+        </h1>
+    {% endblock %}
+    <div class="ui divider"></div>
+    {% block page_content %}{% endblock %}
+
+{% endblock %}

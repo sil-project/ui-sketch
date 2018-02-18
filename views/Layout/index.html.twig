@@ -1,0 +1,77 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+        <script src="/bundles/silacme/js/modal-confirmation.js"></script>
+
+        <style>
+            .ui.visible.left.sidebar~.fixed.menu,
+            .ui.visible.left.sidebar~.pusher {
+                padding-right: 260px;
+            }
+
+            #content {
+                padding: 54px 0 0;
+            }
+
+            i.rounded.icon {
+                border-radius: 0.285rem !important;
+                line-height: 1 !important;
+                padding: 0.1em 0.1em !important;
+                border: 1px solid #d4d4d5;
+                width: 2em !important;
+                height: 2em !important;
+                background-color: #fff;
+            }
+
+            .ui.vertical.menu > .item:first-child,
+            body.pushable,
+            body.pushable .pusher {
+                background-color: #f5f5f5;
+            }
+        </style>
+    </head>
+
+    <body class="pushable">
+
+        <!-- [SIDE BAR] -->
+        {% include '@Template/Layout/side-bar.html.twig' %}
+
+        <!-- [TOP BAR] -->
+        {% include '@Template/Layout/top-bar.html.twig' %}
+
+        <div class="pusher">
+            <div id="content" class="full hight">
+                <div class="ui stackable basic segment">
+
+                    {% include '@Template/Layout/breadcrumbs.html.twig' %}
+                    {% block content %}{% endblock %}
+
+                </div>
+            </div>
+        </div>
+
+        {% include '@Template/Modal/_confirmation.html.twig' %}
+
+        <script type="application/javascript">
+            $(document).ready(function() {
+                $('.ui.accordion').accordion({exclusive: false});
+                $('.tabular.menu .item').tab({history: true, historyType: 'hash'});
+                $('.ui.dropdown').dropdown();
+
+                $('#sidebar').addClass('visible');
+                $('#sidebar').sidebar('attach events', '#sidebar-toggle', 'toggle');
+                $('#sidebar').sidebar('setting', {
+                    dimPage: false,
+                    closable: false
+                });
+
+                $('[data-requires-confirm]').modalConfirmation();
+            });
+        </script>
+    </body>
+
+</html>

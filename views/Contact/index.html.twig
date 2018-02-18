@@ -1,0 +1,167 @@
+{% extends "@Template/Show/index.html.twig" %}
+{% import "@Template/Macro/_common.html.twig" as macros %}
+
+{% block page_content%}
+    <div class="ui top attached tabular menu">
+        <a class="active item" data-tab="general">Général</a>
+        <a class="item" data-tab="phones">Téléphones</a>
+        <a class="item" data-tab="addresses">Adresses</a>
+        <a class="item" data-tab="banking-info">Informations banquaires</a>
+
+        <div class="right menu">
+            <div class="ui dropdown item">
+                Actions
+                <div class="menu">
+                    <div class="item">
+                        Modifier...
+                    </div>
+                    <div class="item">
+                        Cloner...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui bottom attached active tab segment" data-tab="general">
+
+        <div class="ui two column stackable grid">
+            <div class="column">
+                <div class="ui blue segment">
+                    <h4 class="ui header">Informations personnelles</h4>
+                    <div class="ui divider"></div>
+                    {{ macros.field_group(view, ['firstname', 'lastname', 'email']) }}
+
+                </div>
+                <div class="ui blue segment">
+                    <h4 class="ui header">Informations administratives</h4>
+                    <div class="ui divider"></div>
+                    <table class="ui very basic striped celled table">
+                        <tbody>
+                            <tr>
+                                <td class="right aligned four wide">
+                                    <strong>TVA</strong>
+                                </td>
+                                <td>FR 99 999.999.999</td>
+                            </tr>
+                            <tr>
+                                <td class="right aligned">
+                                    <strong>SIRET</strong>
+                                </td>
+                                <td>362 521 879 00034</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui two cards">
+                    {% include '@Template/Phone/default-phone-card.html.twig'%}
+                </div>
+                <div class="ui two cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">
+                                Maison
+                                <a class="right floated" href="#addresses">
+                                    <i class="external link icon"></i>
+                                </a>
+                            </div>
+                            <div class="description">
+                                33 rue de la mairie
+                                <br>
+                                <a>29190 Brasparts</a>
+                                <br>
+                                <a>France</a>
+                            </div>
+                            <div class="extra content">
+                                <div class="ui right floated label">Par défaut</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui two cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">
+                                Compte CMB Pro
+                                <a class="right floated" href="#banking-info">
+                                    <i class="external link icon"></i>
+                                </a>
+                            </div>
+                            <div class="description">
+                                <i class="payment icon"></i>
+                                <strong>IBAN :</strong>
+                                FR89 3704 0044 0532 0130 00
+                            </div>
+                            <div class="extra content">
+                                <div class="ui right floated label">Par défaut</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="phones">
+        <div class="ui cards">
+
+        </div>
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="addresses">
+        <div class="ui cards">
+            <div class="card">
+                <div class="content">
+                    <div class="header">
+                        Maison
+                        <a class="right floated" data-requires-confirm="data-requires-confirm" href="#">
+                            <i class="close link icon"></i>
+                        </a>
+                        <a class="right floated ">
+                            <i class="edit link icon"></i>
+                        </a>
+                    </div>
+                    <div class="description">
+                        33 rue de la mairie
+                        <br>
+                        <a>29190 Brasparts</a>
+                        <br>
+                        <a>France</a>
+                    </div>
+                    <div class="extra content">
+                        <div class="ui right floated label">Par défaut</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="banking-info">
+
+        <div class="ui three cards">
+            <div class="card">
+                <div class="content">
+                    <div class="header">
+                        Compte CMB Pro
+                        <a class="right floated" data-requires-confirm="data-requires-confirm" href="#">
+                            <i class="close link icon"></i>
+                        </a>
+                        <a class="right floated ">
+                            <i class="edit link icon"></i>
+                        </a>
+                    </div>
+                    <div class="description">
+                        <i class="payment icon"></i>
+                        <strong>IBAN :
+                        </strong>
+                        FR89 3704 0044 0532 0130 00
+                    </div>
+                    <div class="extra content">
+                        <div class="ui right floated label">Par défaut</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
