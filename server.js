@@ -5,12 +5,15 @@ var twig = require('twig');
 var app = express();
 twig.cache(false);
 
-app.use(function (req, res, next) {
-    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
-    res.header('Expires', '-1');
-    res.header('Pragma', 'no-cache');
-    next()
+app.use(function(req, res, next) {
+  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  res.header('Expires', '-1');
+  res.header('Pragma', 'no-cache');
+  next()
 });
+
+app.use('/js', express.static('js'));
+app.use('/css', express.static('css'));
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'twig');
