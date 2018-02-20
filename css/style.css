@@ -1,21 +1,72 @@
-.ui.visible.left.sidebar~.fixed.menu, .ui.visible.left.sidebar~.pusher {
-  padding-right: 260px;
+.ui.visible.left.sidebar~.fixed.menu,
+.ui.visible.left.sidebar~.pusher {
+    padding-right: 260px;
 }
 
 #content {
-  padding: 54px 0 0;
+    padding: 54px 0 0;
 }
 
 i.rounded.icon {
-  border-radius: 0.285rem !important;
-  line-height: 1 !important;
-  padding: 0.1em 0.1em !important;
-  border: 1px solid #d4d4d5;
-  width: 2em !important;
-  height: 2em !important;
-  background-color: #fff;
+    border-radius   : 0.285rem !important;
+    line-height     : 1 !important;
+    padding         : 0.1em 0.1em !important;
+    border          : 1px solid #d4d4d5;
+    width           : 2em !important;
+    height          : 2em !important;
+    background-color: #fff;
 }
 
-.ui.vertical.menu>.item:first-child, body.pushable, body.pushable .pusher {
-  background-color: #f5f5f5;
+.ui.vertical.menu > .item:first-child,
+body.pushable,
+body.pushable .pusher {
+    background-color: #f5f5f5;
+}
+
+.ui.button.right.floated,
+.ui.right.floated {
+    float: right;
+    clear: both;
+}
+
+.ui.cards.centered {
+    margin-left : auto;
+    margin-right: auto;
+    clear       : both;
+}
+
+.ui.vertical.segment {
+    border-bottom: none;
+}
+
+.ui.empty.white {
+    background-color: white;
+    opacity         : 1;
+}
+
+.ui.blue.block.header {
+    background-color: #2185d0;
+    border-color    : #2185d0;
+    color           : white !important;
+}
+
+.ui.styled.accordion .content,
+.ui.styled.accordion .title.active {
+    background-color: #F5F5F5;
+    border-color    : #F5F5F5;
+    color           : #2185d0 !important;
+
+}
+
+.ui.with.form form.ui.form {
+    display: none;
+}
+
+.clearfix::after {
+    clear  : both;
+    display: block;
+}
+
+.ui.selection.dropdown {
+    min-width: 6em;
 }

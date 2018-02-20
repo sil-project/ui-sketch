@@ -26,9 +26,16 @@ app.set('twig options', {
   }
 });
 
-
 app.get('/', function(req, res) {
   res.render('Contact/index.html.twig', require_nc(__dirname + '/data/contact-index'));
+});
+
+app.get('/product', function(req, res) {
+  res.render('Product/index.html.twig', require_nc(__dirname + '/data/product-index'));
+});
+
+app.post('/product', function(req, res) {
+  res.render('Product/index.html.twig', require_nc(__dirname + '/data/product-index'));
 });
 
 app.listen(9999);

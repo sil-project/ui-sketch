@@ -1,4 +1,4 @@
-(function ( $ ) {
+(function($) {
     'use strict';
 
     $.fn.extend({
@@ -26,4 +26,4 @@
             });
         }
     });
-})( jQuery );
+})(jQuery);

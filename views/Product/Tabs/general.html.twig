@@ -1,0 +1,194 @@
+<div class="ui bottom attached active tab segment" data-tab="general">
+
+    <div class="ui two column stackable grid">
+        <div class="eight wide column">
+            <div class="ui segment with form">
+                <h4 class="ui header">Informations générales</h4>
+                <div class="ui divider"></div>
+                {{ macros.field_group(view, ['name', 'description', 'code', 'active'], true) }}
+            </div>
+        </div>
+        <div class="eight wide column">
+            <div class="ui segment with form">
+                <h4 class="ui header">Attributs</h4>
+                <div class="ui divider"></div>
+                <table class="ui very basic striped celled table">
+                    <tbody>
+                        <tr>
+                            <td class="right aligned">
+                                <strong>Poid</strong>
+                            </td>
+                            <td>42.5 Kg</td>
+                        </tr>
+                        <tr>
+                            <td class="right aligned">
+                                <strong>Hauteur</strong>
+                            </td>
+                            <td>0.98 m</td>
+                        </tr>
+                        <tr>
+                            <td class="right aligned">
+                                <strong>Largeur</strong>
+                            </td>
+                            <td>1.38 m</td>
+                        </tr>
+                        <tr>
+                            <td class="right aligned">
+                                <strong>Profondeur</strong>
+                            </td>
+                            <td>0.60 m</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <form class="ui form" method="POST" action="">
+
+                    <table class="ui single line striped table">
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    {% include '@Template/Product/Form/attribute.html.twig' with {
+                                        'attr' : {
+                                            'name': 'Poid',
+                                            'value': 42.5,
+                                            'unit': 'Kg',
+                                            'units': ['g', 'Kg', 'T']
+                                        }
+                                    } %}
+                                </td>
+                                <td>
+                                    <button class="ui large icon red button">
+                                        <i class="trash alternate outline icon"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {% include '@Template/Product/Form/attribute.html.twig' with {
+                                        'attr' : {
+                                            'name': 'Hauteur',
+                                            'value': 0.98,
+                                            'unit': 'm',
+                                            'units': ['mm', 'm', 'km']
+                                        }
+                                    } %}
+                                </td>
+                                <td>
+                                    <button class="ui large icon red button">
+                                        <i class="trash alternate outline icon"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {% include '@Template/Product/Form/attribute.html.twig' with {
+                                        'attr' : {
+                                            'name': 'Largeur',
+                                            'value': 1.38,
+                                            'unit': 'm',
+                                            'units': ['mm', 'm', 'km']
+                                        }
+                                    } %}
+                                </td>
+                                <td>
+                                    <button class="ui large icon red button">
+                                        <i class="trash alternate outline icon"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {% include '@Template/Product/Form/attribute.html.twig' with {
+                                        'attr' : {
+                                            'name': 'Profondeur',
+                                            'value': 0.60,
+                                            'unit': 'm',
+                                            'units': ['mm', 'm', 'km']
+                                        }
+                                    } %}
+                                </td>
+                                <td>
+                                    <button class="ui large icon red button">
+                                        <i class="trash alternate outline icon"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    {% include '@Template/Product/Form/attribute.html.twig' with {
+                                        'attr' : {
+                                            'name': null,
+                                            'value': null,
+                                            'unit': null
+                                        }
+                                    } %}
+                                </td>
+                                <td>
+                                    <button class="ui large icon green button">
+                                        <i class="plus circle icon"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="ui divider"></div>
+                    <button class="ui button submit primary" type="submit">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="eight wide column">
+            <div class="ui segment">
+                <h4 class="ui header">Options</h4>
+                <div class="ui divider"></div>
+                <table class="ui very basic striped celled table">
+                    <tbody>
+                        <tr>
+                            <td class="right aligned">
+                                <strong>Couleur</strong>
+                            </td>
+                            <td>
+                                <div class="ui middle aligned list">
+                                    <div class="item">
+                                        <div class="ui red label">
+                                            <a class="ui empty white circular label"></a>
+                                            Rouge
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="ui blue label">
+                                            <a class="ui empty white circular label"></a>
+                                            Bleu
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="ui yellow label">
+                                            <a class="ui empty white circular label"></a>
+                                            Jaune
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right aligned">
+                                <strong>Packaging</strong>
+                            </td>
+                            <td>
+                                <div class="ui middle aligned list">
+                                    <div class="item">
+                                        Édition standard
+                                    </div>
+                                    <div class="item">
+                                        Édition Deluxe
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
