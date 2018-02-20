@@ -2,10 +2,10 @@
 
     <div class="ui two column stackable grid">
         <div class="eight wide column">
-            <div class="ui segment">
+            <div class="ui segment with form">
                 <h4 class="ui header">Informations générales</h4>
                 <div class="ui divider"></div>
-                {{ macros.field_group(view, ['name', 'description', 'code']) }}
+                {{ macros.field_group(view, ['name', 'description', 'code', 'active'], true) }}
             </div>
         </div>
         <div class="eight wide column">
