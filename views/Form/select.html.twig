@@ -1,13 +1,15 @@
-<div class="field">
-      <label>{{ field.label }}</label>
-      <div class="ui selection dropdown">
-          <input name="{{ field.name }}" type="hidden">
-          <i class="dropdown icon"></i>
-          <div class="default text">{{ field.value }}</div>
-          <div class="menu">
-              {% for value in field.form.values %}
+<div class="field {% if field.form.inline == true %}inline{% endif %}">
+    {% if field.label is not null %}
+        <label>{{ field.label }}</label>
+    {% endif %}
+    <div class="ui selection dropdown">
+        <input name="{{ field.name }}" type="hidden">
+        <i class="dropdown icon"></i>
+        <div class="default text">{{ field.value }}</div>
+        <div class="menu">
+            {% for value in field.form.values %}
                 <div class="item" data-value="{{ value }}">{{ value }}</div>
-              {% endfor %}
-          </div>
-      </div>
-  </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

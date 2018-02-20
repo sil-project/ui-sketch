@@ -1,4 +1,4 @@
-<div class="field">
+<div class="field {% if field.form.inline == true %}inline{% endif %}">
     <label>{{ field.label }}</label>
     <input name="{{ field.name }}" placeholder="{{ field.label }}" value="{{ field.value }}" type="number"/>
 </div>

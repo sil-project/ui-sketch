@@ -44,12 +44,18 @@ body.pushable .pusher {
     opacity         : 1;
 }
 
-.ui.blue.block.header,
-.ui.styled.accordion .content.active,
-.ui.styled.accordion .title.active {
+.ui.blue.block.header {
     background-color: #2185d0;
     border-color    : #2185d0;
     color           : white !important;
+}
+
+.ui.styled.accordion .content,
+.ui.styled.accordion .title.active {
+    background-color: #F5F5F5;
+    border-color    : #F5F5F5;
+    color           : #2185d0 !important;
+
 }
 
 .ui.with.form form.ui.form {
@@ -59,4 +65,8 @@ body.pushable .pusher {
 .clearfix::after {
     clear  : both;
     display: block;
+}
+
+.ui.selection.dropdown {
+    min-width: 6em;
 }

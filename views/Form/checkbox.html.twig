@@ -1,4 +1,4 @@
-<div class="inline field">
+<div class="field {% if field.form.inline == true %}inline{% endif %}">
     <div class="ui toggle checkbox">
         <input name="{{ field.name }}" tabindex="0" class="hidden" type="checkbox" {% if field.value == true %}checked="checked"{% endif %}>
         <label>{{ field.label }}</label>
