@@ -1,0 +1,30 @@
+{% extends "@Template/Show/index.html.twig" %}
+{% import "@Template/Macro/_common.html.twig" as macros %}
+
+{% block page_content%}
+    <div class="ui stackable grid">
+
+        <div class="twelve wide column">
+
+            {% include "@Template/Product/Tabs/tabs.html.twig" %}
+
+            {% include "@Template/Product/Tabs/general.html.twig" %}
+
+            {% include "@Template/Product/Tabs/variants.html.twig" %}
+
+            {% include "@Template/Product/Tabs/channels.html.twig" %}
+
+        </div>
+
+        <div class="four wide column right aligned">
+
+            {% include "@Template/Product/Cards/price.html.twig" %}
+
+            {% include "@Template/Product/Cards/channels.html.twig" %}
+
+            {% include "@Template/Product/Cards/history.html.twig" %}
+
+        </div>
+
+    </div>
+{% endblock %}

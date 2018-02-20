@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
-  $('.ui.accordion').accordion({
+  $('.ui.accordion:not(.exclusive)').accordion({
     exclusive: false
+  });
+  $('.ui.accordion.exclusive').accordion({
+    exclusive: true
   });
   $('.tabular.menu .item').tab({
     history: true,
@@ -17,4 +20,9 @@ $(document).ready(function() {
   });
 
   $('[data-requires-confirm]').modalConfirmation();
+
+  $('[data-content]')
+    .popup({
+      inline: true
+    });
 });
