@@ -37,6 +37,79 @@ module.exports = {
             }
         }
     },
+    create: {
+        name: {
+            label: 'Nom',
+            form: {
+                type: 'text'
+            }
+        },
+        code: {
+            label: 'Référence',
+            form: {
+                type: 'text'
+            }
+        },
+        description: {
+            label: 'Description',
+            form: {
+                type: 'textarea'
+            }
+        },
+        options: {
+            label: 'Types d\'options',
+            form: {
+                type: 'checkboxes',
+                values: ['Couleur', 'Packaging', 'Taille', 'Pointure']
+            }
+        },
+        optionsValues_Couleur: {
+            label: 'Couleur',
+            form: {
+                type: 'checkboxes',
+                values: ['Rouge', 'Bleu', 'Jaune', 'Noir', 'Vert']
+            }
+        },
+        optionsValues_Packaging: {
+            label: 'Packaging',
+            form: {
+                type: 'checkboxes',
+                values: ['Édition standard', 'Édition Deluxe', 'Édition limitée']
+            }
+        },
+        optionsValues_Taille: {
+            label: 'Taille',
+            form: {
+                type: 'checkboxes',
+                values: [
+                    'S',
+                    'M',
+                    'L',
+                    'XL',
+                    '2XL',
+                    '3XL'
+                ]
+            }
+        },
+        optionsValues_Pointure: {
+            label: 'Taille',
+            form: {
+                type: 'checkboxes',
+                values: [
+                    '36',
+                    '37',
+                    '38',
+                    '39',
+                    '40',
+                    '41',
+                    '42',
+                    '43',
+                    '44',
+                    '45'
+                ]
+            }
+        }
+    },
     variants: {
         'AWE-INC-512-RED-STD': {
             name: {
@@ -79,7 +152,7 @@ module.exports = {
                 value: 'Rouge',
                 form: {
                     type: 'select',
-                    values: ['Rouge','Bleu','Jaune']
+                    values: ['Rouge', 'Bleu', 'Jaune']
                 }
             },
             packaging: {
@@ -87,7 +160,7 @@ module.exports = {
                 value: 'Édition Standard',
                 form: {
                     type: 'select',
-                    values: ['Édition Standard','Édition Deluxe']
+                    values: ['Édition Standard', 'Édition Deluxe']
                 }
             }
         },
@@ -132,7 +205,7 @@ module.exports = {
                 value: 'Bleu',
                 form: {
                     type: 'select',
-                    values: ['Rouge','Bleu','Jaune']
+                    values: ['Rouge', 'Bleu', 'Jaune']
                 }
             },
             packaging: {
@@ -140,7 +213,7 @@ module.exports = {
                 value: 'Édition Standard',
                 form: {
                     type: 'select',
-                    values: ['Édition Standard','Édition Deluxe']
+                    values: ['Édition Standard', 'Édition Deluxe']
                 }
             }
         },
@@ -185,7 +258,7 @@ module.exports = {
                 value: 'Rouge',
                 form: {
                     type: 'select',
-                    values: ['Rouge','Bleu','Jaune']
+                    values: ['Rouge', 'Bleu', 'Jaune']
                 }
             },
             packaging: {
@@ -193,7 +266,7 @@ module.exports = {
                 value: 'Édition Standard',
                 form: {
                     type: 'select',
-                    values: ['Édition Standard','Édition Deluxe']
+                    values: ['Édition Standard', 'Édition Deluxe']
                 }
             }
         },
@@ -238,7 +311,7 @@ module.exports = {
                 value: 'Rouge',
                 form: {
                     type: 'select',
-                    values: ['Rouge','Bleu','Jaune']
+                    values: ['Rouge', 'Bleu', 'Jaune']
                 }
             },
             packaging: {
@@ -246,7 +319,7 @@ module.exports = {
                 value: 'Édition Deluxe',
                 form: {
                     type: 'select',
-                    values: ['Édition Standard','Édition Deluxe']
+                    values: ['Édition Standard', 'Édition Deluxe']
                 }
             }
         },
@@ -291,7 +364,7 @@ module.exports = {
                 value: 'Bleu',
                 form: {
                     type: 'select',
-                    values: ['Rouge','Bleu','Jaune']
+                    values: ['Rouge', 'Bleu', 'Jaune']
                 }
             },
             packaging: {
@@ -299,7 +372,7 @@ module.exports = {
                 value: 'Édition Deluxe',
                 form: {
                     type: 'select',
-                    values: ['Édition Standard','Édition Deluxe']
+                    values: ['Édition Standard', 'Édition Deluxe']
                 }
             }
         },
@@ -344,7 +417,7 @@ module.exports = {
                 value: 'Rouge',
                 form: {
                     type: 'select',
-                    values: ['Rouge','Bleu','Jaune']
+                    values: ['Rouge', 'Bleu', 'Jaune']
                 }
             },
             packaging: {
@@ -352,10 +425,9 @@ module.exports = {
                 value: 'Édition Deluxe',
                 form: {
                     type: 'select',
-                    values: ['Édition Standard','Édition Deluxe']
+                    values: ['Édition Standard', 'Édition Deluxe']
                 }
             }
-        },
-
+        }
     }
 };

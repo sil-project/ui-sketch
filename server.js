@@ -38,4 +38,8 @@ app.post('/product', function(req, res) {
   res.render('Product/index.html.twig', require_nc(__dirname + '/data/product-index'));
 });
 
+app.get('/product/create', function(req, res) {
+  res.render('Product/create.html.twig', require_nc(__dirname + '/data/product-index'));
+});
+
 app.listen(9999);

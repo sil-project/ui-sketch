@@ -22,13 +22,20 @@ $(document).ready(function() {
     $('.ui.with.form form .submit').on('click', function() {
         $(this).closest('form').removeClass('transition').addClass('loading');
     });
+
+    $('[data-modal]:not(.ui.modal)').on('click', function() {
+        var btn = $(this);
+        var modal = $('.ui.modal[data-modal="' + btn.attr('data-modal') + '"]');
+
+        modal.modal('setting', 'transition', 'pulse').modal('show');
+    });
 });
 
 jQuery.fn.toggleForm = function() {
     return this.each(function() {
 
         var o = $(this);
-        var toggler = $('<a class="ui right floated toggler"><i class="edit icon"></i></a>');
+        var toggler = $('<a class="ui right floated toggler"><i class="edit outline icon center aligned"></i></a>');
         var form = o.find('.ui.form');
 
         o.find('.ui.header').append(toggler);
@@ -42,7 +49,7 @@ jQuery.fn.toggleForm = function() {
                     'animation': 'scale',
                     onComplete: function() {
                         showContent.transition('scale');
-                        toggler.find('.icon').removeClass('undo alternate').addClass('edit');
+                        toggler.find('.icon').removeClass('undo alternate').addClass('edit outline');
                     }
                 });
             } else {
@@ -50,7 +57,7 @@ jQuery.fn.toggleForm = function() {
                     'animation': 'scale',
                     onComplete: function() {
                         form.transition('scale');
-                        toggler.find('.icon').removeClass('edit').addClass('undo alternate');
+                        toggler.find('.icon').removeClass('edit outline').addClass('undo alternate');
                     }
                 });
             }

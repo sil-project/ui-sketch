@@ -1,4 +1,14 @@
 {% macro field_group(view, fields, editable) %}
+    {% import _self as common %}
+    {% spaceless %}
+        {{ common.display_show_group(view, fields) }}
+        {% if editable == true %}
+            {{ common.display_form_group(view, fields, true) }}
+        {% endif %}
+    {% endspaceless %}
+{% endmacro %}
+
+{% macro display_show_group(view, fields) %}
     {% spaceless %}
         <table class="ui very basic striped celled table">
             <tbody>
@@ -13,17 +23,28 @@
                 {% endfor %}
             </tbody>
         </table>
-        {% if editable == true %}
-            <form class="ui form" method="POST" action="">
-                {% for fieldname in fields %}
-                    {% set field = attribute(view, fieldname) %}
-                    {% include '@Template/Form/' ~ field.form.type ~ '.html.twig' with {
-                        'field' : field
-                    } %}
-                {% endfor %}
+    {% endspaceless %}
+{% endmacro %}
+
+{% macro display_form_group(view, fields, withSubmit, emptyValues) %}
+    {% spaceless %}
+        <form class="ui form" method="POST" action="">
+            {% for fieldname in fields %}
+                {% set field = attribute(view, fieldname) %}
+
+
+
+                {% include '@Template/Form/' ~ field.form.type ~ '.html.twig' with {
+                    'field' : field
+                } %}
+            {% endfor %}
+            {% if withSubmit == true %}
                 <div class="ui divider"></div>
-                <button class="ui button submit primary" type="submit">Enregistrer</button>
-            </form>
-        {% endif %}
+                <button class="ui button labeled icon submit positive" type="submit">
+                    <i class="save icon"></i>
+                    Enregistrer
+                </button>
+            {% endif %}
+        </form>
     {% endspaceless %}
 {% endmacro %}
