@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 
     <head>
-      {% block stylesheets %}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
-        <link href="css/style.css" rel="stylesheet" type="text/css">
-      {% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+            <link href="/css/style.css" rel="stylesheet" type="text/css">
+        {% endblock %}
     </head>
 
     <body class="pushable">
@@ -30,11 +30,11 @@
         {% include '@Template/Modal/_confirmation.html.twig' %}
 
         {% block javascripts %}
-          <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-          <script src="/js/modal-confirmation.js"></script>
-          <script src="/js/script.js"></script>
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+            <script src="/js/modal-confirmation.js"></script>
+            <script src="/js/script.js"></script>
         {% endblock %}
     </body>
 

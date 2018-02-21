@@ -2,6 +2,7 @@
 {% import "@Template/Macro/_common.html.twig" as macros %}
 
 {% block page_header %}
+
     <h1 class="ui center aligned header">
         <div class="ui stackable steps">
             <div class="active step" data-name="id">
@@ -27,15 +28,16 @@
             </div>
         </div>
     </h1>
+
 {% endblock %}
 
 {% block page_content %}
 
     <div class="ui stackable grid">
 
-        <div class="twelve wide column">
+        <div class="sixteen wide column">
 
-            <div class="ui segment center aligned">
+            <div class="ui segment">
                 <div class="step content">
                     <div class="description active" data-step="id">
                         {{ macros.display_form_group(create, ['name', 'description', 'code']) }}
@@ -43,9 +45,13 @@
                     <div class="description" data-step="options">
                         {{ macros.display_form_group(create, ['options']) }}
                     </div>
-                    <div class="description" data-step="variants">
-                        {{ macros.display_form_group(create, ['optionsValues_Couleur','optionsValues_Packaging']) }}
-                        {{ macros.display_form_group(create, ['optionsValues_Taille','optionsValues_Pointure']) }}
+                    <div class="description ui grid" data-step="variants">
+                        <div class="eight wide column">
+                            {{ macros.display_form_group(create, ['optionsValues_Couleur','optionsValues_Packaging']) }}
+                        </div>
+                        <div class="eight wide column">
+                            {{ macros.display_form_group(create, ['optionsValues_Taille','optionsValues_Pointure']) }}
+                        </div>
                         <div class="ui divider"></div>
                         <div class="ui buttons">
                             <button class="ui button">Annuler</button>
@@ -55,22 +61,27 @@
                     </div>
                 </div>
 
-                <div class="actions">
-                    <div class="ui left labeled icon button disabled prev step">
-                        Étape précédente
-                        <i class="angle left icon"></i>
-                    </div>
-                    <div class="ui green right labeled icon button next step">
-                        Étape suivante
-                        <i class="angle right icon"></i>
-                    </div>
-                </div>
+            </div>
 
+            <div class="ui segment center aligned">
+                <div class="ui left labeled icon button disabled prev step">
+                    Étape précédente
+                    <i class="angle left icon"></i>
+                </div>
+                <div class="ui green right labeled icon button next step">
+                    Étape suivante
+                    <i class="angle right icon"></i>
+                </div>
             </div>
 
         </div>
 
     </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -121,5 +132,4 @@
             }
         });
     </script>
-
 {% endblock %}
