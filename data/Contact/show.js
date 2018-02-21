@@ -2,7 +2,7 @@ module.exports = {
   page: {
     header: {
       icon: 'user',
-      title: 'Glenn Cavarlé',
+      title: 'Romain Sanchez',
       description: ''
     }
   },
@@ -18,6 +18,10 @@ module.exports = {
     email: {
       label: 'Email',
       value: 'glenn.cavarle@libre-informatique.fr'
+    },
+    position: {
+      label: 'Position',
+      value: 'Developer'
     }
   }
 };

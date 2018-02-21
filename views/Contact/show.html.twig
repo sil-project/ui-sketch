@@ -1,0 +1,118 @@
+{% extends "@Template/Show/index.html.twig" %}
+{% import "@Template/Macro/_common.html.twig" as macros %}
+
+{% block javascripts %}
+  {{parent()}}
+  <script src="js/notes.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="ui card fluid raised">
+    {% block page_header %}
+      <h1 class="ui icon header">
+        <i class="circular {{page.header.icon}} icon blue"></i>
+        <div class="content">
+          {{page.header.title}}
+          <div class="sub header">
+            <p><a class="" href="mailto:sg">{{view.email.value}}</a></p>
+            {{view.position.value}}
+        </div>
+      </h1>
+    {% endblock %}
+  </div>
+  <div class="ui container fluid content">
+    <div class="ui equal width grid">
+      <div class="column">
+        <div class="ui fluid raised card">
+          <div class="content">
+            <div class="header">
+              <h4>Notes</h4>
+            </div>
+          </div>
+          <div class="fluid content">
+            <div class="ui fluid form">
+              <div id="contact-note-field" class="twelve wide inline field">
+                <input type="text" class="" placeholder="Add note">
+              </div>
+              <i id="add-note" class="inverted circular blue add medium icon"></i>
+            </div>
+            <div id="notes" class="ui middle aligned divided list">
+              <div class="item contact-note">
+                <div class="right floated content">
+                  <i class="disabled trash icon remove-note"></i>
+                </div>
+                <div class="content">
+                  <p>Back in 2 weeks</p>
+                  <p class="meta">20/02/18</p>
+                </div>
+              </div>
+              <div class="item contact-note">
+                <div class="right floated content">
+                  <i class="disabled trash icon remove-note"></i>
+                </div>
+                <div class="content">
+                  <p>Forgot his pencil</p>
+                  <p class="meta">17/01/18</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui fluid raised card">
+          <div class="content">
+            <div class="header">
+              <h4>Phones</h4>
+            </div>
+          </div>
+          <div class="content">
+            <div class="header">
+              Mobile
+              <a class="right floated" href="/edit/">
+                <i class="external link icon"></i>
+              </a>
+            </div>
+            <div class="description">
+              <i class="phone icon"></i>
+              00 00 00 00 00
+            </div>
+            <div class="extra content">
+              <div class="ui right floated label">Par défaut</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui fluid raised card">
+          <div class="content">
+            <div class="header">
+              <h4>Addresses</h4>
+            </div>
+          </div>
+          <div class="content">
+            <div class="header">
+                Maison
+                <a class="right floated" data-requires-confirm="data-requires-confirm" href="#">
+                    <i class="close link icon"></i>
+                </a>
+                <a class="right floated ">
+                    <i class="edit link icon"></i>
+                </a>
+            </div>
+            <div class="description">
+                33 rue de la mairie
+                <br>
+                <a>29190 Brasparts</a>
+                <br>
+                <a>France</a>
+            </div>
+            <div class="extra content">
+                <div class="ui right floated label">Par défaut</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

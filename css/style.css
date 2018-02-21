@@ -70,3 +70,7 @@ body.pushable .pusher {
 .ui.selection.dropdown {
     min-width: 6em;
 }
+
+#contact-note-field {
+  display: inline;
+}
