@@ -37,6 +37,8 @@
 
         <div class="sixteen wide column">
 
+            {% include '@Template/Product/Step/nav.html.twig' %}
+
             <div class="ui segment">
                 <div class="step content">
                     <div class="description active" data-step="id">
@@ -46,33 +48,27 @@
                         {{ macros.display_form_group(create, ['options']) }}
                     </div>
                     <div class="description ui grid" data-step="variants">
-                        <div class="eight wide column">
-                            {{ macros.display_form_group(create, ['optionsValues_Couleur','optionsValues_Packaging']) }}
+                        <div class="seven wide column">
+                            {{ macros.display_form_group(create, ['optionsValues_Couleur','optionsValues_Taille']) }}
                         </div>
-                        <div class="eight wide column">
-                            {{ macros.display_form_group(create, ['optionsValues_Taille','optionsValues_Pointure']) }}
+                        <div class="seven wide column">
+                            {{ macros.display_form_group(create, ['optionsValues_Packaging','optionsValues_Pointure']) }}
                         </div>
                         <div class="ui divider"></div>
-                        <div class="ui buttons">
-                            <button class="ui button">Annuler</button>
-                            <div class="or" data-text="ou"></div>
-                            <button class="ui positive button">Créer</button>
+                        <div class="ui center aligned basic segment">
+                            <a class="ui positive icon button" href="/product">
+                                <i class="large icons">
+                                    <i class="archive icon"></i>
+                                    <i class="bottom right corner add icon green"></i>
+                                </i>
+                                Créer le produit
+                            </a>
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <div class="ui segment center aligned">
-                <div class="ui left labeled icon button disabled prev step">
-                    Étape précédente
-                    <i class="angle left icon"></i>
-                </div>
-                <div class="ui green right labeled icon button next step">
-                    Étape suivante
-                    <i class="angle right icon"></i>
-                </div>
-            </div>
+            {% include '@Template/Product/Step/nav.html.twig' %}
 
         </div>
 
@@ -107,7 +103,8 @@
                 currentStep.removeClass('active');
 
                 currentStepContent.transition({
-                    'animation': 'scale',
+                    'animation': 'slide left',
+                    'duration': 200,
                     onComplete: function() {
                         currentStepContent.removeClass('active');
                         if (prev == true) {
@@ -117,7 +114,7 @@
                         }
                         currentStepContent = stepContents.filter('[data-step="' + currentStep.attr('data-name') + '"]');
 
-                        currentStepContent.transition('scale').addClass('active');
+                        currentStepContent.transition({'animation': 'slide right', 'duration': 200}).addClass('active');
                         currentStep.addClass('active');
 
                         if (currentStep.is(':first-child')) {
