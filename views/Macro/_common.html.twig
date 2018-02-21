@@ -1,4 +1,4 @@
-{% macro field_group(view, fields) %}
+{% macro field_group(view, fields, editable) %}
     {% spaceless %}
         <table class="ui very basic striped celled table">
             <tbody>
@@ -13,5 +13,17 @@
                 {% endfor %}
             </tbody>
         </table>
+        {% if editable == true %}
+            <form class="ui form" method="POST" action="">
+                {% for fieldname in fields %}
+                    {% set field = attribute(view, fieldname) %}
+                    {% include '@Template/Form/' ~ field.form.type ~ '.html.twig' with {
+                        'field' : field
+                    } %}
+                {% endfor %}
+                <div class="ui divider"></div>
+                <button class="ui button submit primary" type="submit">Enregistrer</button>
+            </form>
+        {% endif %}
     {% endspaceless %}
 {% endmacro %}
