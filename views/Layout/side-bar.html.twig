@@ -1,3 +1,4 @@
+{% import "@Template/Macro/_menu.html.twig" as _menu %}
 <div id="sidebar" class="ui sidebar vertical accordion menu visible left">
     <a class="item" href="#">
 
@@ -7,50 +8,6 @@
         </h2>
     </a>
 
-    <div class="item first">
-        <a class="title active">
-            <i class=" dropdown icon"></i>
-            <div class="header">
-                <i class="icon users"></i>
-                <strong>Comptes et Contacts</strong>
-            </div>
-            <div class="content menu active">
-                <a class="item first" href="#">
-                    <i class="icon tasks"></i>
-                    Item 1
-                </a>
-                <a class="item" href="#">
-                    <i class="icon tasks"></i>
-                    Item 2
-                </a>
-                <a class="item last" href="#">
-                    <i class="icon tasks"></i>
-                    Item 3
-                </a>
-            </div>
-        </a>
-    </div>
-    <div class="item">
-        <a class="title active">
-            <i class="dropdown icon"></i>
-            <div class="header">
-                <i class="icon cubes"></i>
-                <strong>Gestion des Stocks</strong>
-            </div>
-            <div class="content menu active">
-                <a class="item first" href="#">
-                    <i class="icon tasks"></i>
-                    Item 1
-                </a>
-                <a class="item" href="#">
-                    <i class="icon tasks"></i>
-                    Item 2
-                </a>
-                <a class="item last" href="#">
-                    <i class="icon tasks"></i>
-                    Item 3
-                </a>
-            </div>
-        </a>
-    </div>
+    {{ _menu.menu(menu) }}
+
 </div>
