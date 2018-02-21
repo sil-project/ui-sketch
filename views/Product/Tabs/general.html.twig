@@ -2,17 +2,17 @@
 
     <div class="ui two column stackable grid">
         <div class="eight wide column">
-            <div class="ui segment with form">
+            <div class="ui clearing segment with form">
                 <h4 class="ui header">Informations générales</h4>
                 <div class="ui divider"></div>
                 {{ macros.field_group(view, ['name', 'description', 'code', 'active'], true) }}
             </div>
         </div>
         <div class="eight wide column">
-            <div class="ui segment with form">
+            <div class="ui clearing segment with form">
                 <h4 class="ui header">Attributs</h4>
                 <div class="ui divider"></div>
-                <table class="ui very basic striped celled table">
+                <table class="ui very basic striped celled table show data">
                     <tbody>
                         <tr>
                             <td class="right aligned">
@@ -133,7 +133,14 @@
                     </table>
 
                     <div class="ui divider"></div>
-                    <button class="ui button submit primary" type="submit">Enregistrer</button>
+                    <button class="ui button labeled icon submit positive right floated" type="submit">
+                        <i class="save icon"></i>
+                        Enregistrer
+                    </button>
+                    <a class="ui button labeled icon left floated close">
+                        <i class="undo icon"></i>
+                        Annuler
+                    </a>
                 </form>
             </div>
         </div>

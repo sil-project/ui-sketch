@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-    $('.ui.accordion:not(.exclusive)').accordion({exclusive: false});
-    $('.ui.accordion.exclusive').accordion({exclusive: true});
+    $('.ui.accordion:not(.exclusive)').accordion({exclusive: false, duration: 200});
+    $('.ui.accordion.exclusive').accordion({exclusive: true, duration: 200});
     $('.tabular.menu .item').tab({history: true, historyType: 'hash'});
     $('.ui.dropdown').dropdown();
     $('.ui.checkbox').checkbox();
@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     $('[data-content]').popup({inline: true});
 
-    $('.ui.with.form').toggleForm();
+    $('.ui.with.form').toggleableForm();
 
     $('.ui.with.form form .submit').on('click', function() {
         $(this).closest('form').removeClass('transition').addClass('loading');
@@ -31,7 +31,7 @@ $(document).ready(function() {
     });
 });
 
-jQuery.fn.toggleForm = function() {
+jQuery.fn.toggleableForm = function() {
     return this.each(function() {
 
         var o = $(this);
@@ -40,28 +40,33 @@ jQuery.fn.toggleForm = function() {
 
         o.find('.ui.header').append(toggler);
 
-        toggler.on('click', function() {
+        toggler.on('click', toggleForm);
+        form.find('.ui.button.close').on('click', toggleForm);
 
-            var showContent = o.find('> *:not(form,.toggler,.ui.header,.ui.divider)');
+        function toggleForm() {
+
+            var showContent = o.find('.ui.show.data');
 
             if (form.is(':visible')) {
                 form.transition({
-                    'animation': 'scale',
+                    'animation': 'slide down',
+                    'duration': 200,
                     onComplete: function() {
-                        showContent.transition('scale');
+                        showContent.transition({'animation': 'slide down', 'duration': 200});
                         toggler.find('.icon').removeClass('undo alternate').addClass('edit outline');
                     }
                 });
             } else {
                 showContent.transition({
-                    'animation': 'scale',
+                    'animation': 'slide down',
+                    'duration': 200,
                     onComplete: function() {
-                        form.transition('scale');
+                        form.transition({'animation': 'slide down', 'duration': 200});
                         toggler.find('.icon').removeClass('edit outline').addClass('undo alternate');
                     }
                 });
             }
 
-        });
+        }
     });
 };

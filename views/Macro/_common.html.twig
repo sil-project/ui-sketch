@@ -10,7 +10,7 @@
 
 {% macro display_show_group(view, fields) %}
     {% spaceless %}
-        <table class="ui very basic striped celled table">
+        <table class="ui very basic striped celled table show data">
             <tbody>
                 {% for fieldname in fields %}
                     <tr>
@@ -28,7 +28,7 @@
 
 {% macro display_form_group(view, fields, withSubmit, emptyValues) %}
     {% spaceless %}
-        <form class="ui form" method="POST" action="">
+        <form class="ui form data" method="POST" action="">
             {% for fieldname in fields %}
                 {% set field = attribute(view, fieldname) %}
 
@@ -40,10 +40,14 @@
             {% endfor %}
             {% if withSubmit == true %}
                 <div class="ui divider"></div>
-                <button class="ui button labeled icon submit positive" type="submit">
+                <button class="ui button labeled icon submit positive right floated" type="submit">
                     <i class="save icon"></i>
                     Enregistrer
                 </button>
+                <a class="ui button labeled icon left floated close">
+                    <i class="undo icon"></i>
+                    Annuler
+                </a>
             {% endif %}
         </form>
     {% endspaceless %}
