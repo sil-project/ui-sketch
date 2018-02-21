@@ -2,20 +2,20 @@
   "name": "sil-template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "express": "^4.16.2",
+    "extend": "^3.0.1",
+    "jquery": "^3.3.1",
     "require-nocache": "^1.0.0",
+    "semantic-ui-css": "^2.3.0",
     "twig": "^1.10.5"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://git.kloum.io/GlennCavarle/sil-template.git"
-  },
-  "author": "",
+  "repository": "https://git.kloum.io/GlennCavarle/sil-template.git",
+  "author": "GlennCavarle <glenn.cavarle@gmail.com>",
   "license": "ISC"
 }

@@ -1,0 +1,178 @@
+{% extends "@Template/Show/index.html.twig" %}
+{% import "@Template/Macro/_common.html.twig" as macros %}
+
+{% block page_content%}
+    <div class="ui top attached tabular menu">
+        <a class="active item" data-tab="general">Général</a>
+        <a class="item" data-tab="phones">Coordonnées</a>
+        <a class="item" data-tab="addresses">Formation</a>
+        <a class="item" data-tab="banking-info">Carrière</a>
+        <a class="item" data-tab="banking-info">Entretiens</a>
+        <a class="item" data-tab="banking-info">Fiches de poste</a>
+
+        <div class="right menu">
+            <div class="ui dropdown item">
+                Actions
+                <div class="menu">
+                    <div class="item">
+                        Modifier...
+                    </div>
+                    <div class="item">
+                        Cloner...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui bottom attached active tab segment" data-tab="general">
+
+        <div class="ui two column stackable grid">
+            <div class="column">
+                <div class="ui blue segment">
+                    <h4 class="ui header">Informations personnelles</h4>
+                    <div class="ui divider"></div>
+                    <table class="ui very basic striped celled table">
+                        <tbody>
+                            <tr>
+                                <td class="right aligned four wide">
+                                    <strong>Civilité</strong>
+                                </td>
+                                <td>M.</td>
+                            </tr>
+                            <tr>
+                                <td class="right aligned four wide">
+                                    <strong>Prénom</strong>
+                                </td>
+                                <td>Jerome</td>
+                            </tr>
+                            <tr>
+                                <td class="right aligned four wide">
+                                    <strong>Nom complet</strong>
+                                </td>
+                                <td>Dupont de Dinechin</td>
+                            </tr>
+                            <tr>
+                                <td class="right aligned four wide">
+                                    <strong>Nom usuel</strong>
+                                </td>
+                                <td>de Dinechin</td>
+                            </tr>
+                            <tr>
+                                <td class="right aligned four wide">
+                                    <strong>Date de naissance</strong>
+                                </td>
+                                <td>31/12/1964 (51 ans)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+            <div class="column">
+                <div class="ui two cards">
+                  <div class="card">
+                    <div class="content">
+                      <div class="header">
+                        Téléphone fixe
+                        <a class="right floated" href="#">
+                          <i class="external link icon"></i>
+                        </a>
+                      </div>
+                      <div class="description">
+                        <i class="phone icon"></i>
+                        01 39 24 02 26
+                      </div>
+                      <div class="extra content">
+                        <div class="ui right floated label">Par défaut</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="ui two cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">
+                                Adresse personnelle
+                                <a class="right floated" href="#addresses">
+                                    <i class="external link icon"></i>
+                                </a>
+                            </div>
+                            <div class="description">
+                                51 rue des Missionnaires
+                                <br>
+                                <a>78000 Versailles</a>
+                                <br>
+                                <a>France</a>
+                            </div>
+                            <div class="extra content">
+                                <div class="ui right floated label">Par défaut</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="phones">
+        <div class="ui cards"></div>
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="addresses">
+        <div class="ui cards">
+            <div class="card">
+                <div class="content">
+                    <div class="header">
+                        Maison
+                        <a class="right floated" data-requires-confirm="data-requires-confirm" href="#">
+                            <i class="close link icon"></i>
+                        </a>
+                        <a class="right floated ">
+                            <i class="edit link icon"></i>
+                        </a>
+                    </div>
+                    <div class="description">
+                        33 rue de la mairie
+                        <br>
+                        <a>29190 Brasparts</a>
+                        <br>
+                        <a>France</a>
+                    </div>
+                    <div class="extra content">
+                        <div class="ui right floated label">Par défaut</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="banking-info">
+
+        <div class="ui three cards">
+            <div class="card">
+                <div class="content">
+                    <div class="header">
+                        Compte CMB Pro
+                        <a class="right floated" data-requires-confirm="data-requires-confirm" href="#">
+                            <i class="close link icon"></i>
+                        </a>
+                        <a class="right floated ">
+                            <i class="edit link icon"></i>
+                        </a>
+                    </div>
+                    <div class="description">
+                        <i class="payment icon"></i>
+                        <strong>IBAN :
+                        </strong>
+                        FR89 3704 0044 0532 0130 00
+                    </div>
+                    <div class="extra content">
+                        <div class="ui right floated label">Par défaut</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

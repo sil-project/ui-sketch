@@ -1,5 +1,4 @@
 module.exports = {
-  template: require('./template-data'),
   page: {
     header: {
       icon: 'user',

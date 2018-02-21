@@ -1,9 +1,12 @@
 {% block breadcrumbs %}
     <div class="ui breadcrumb">
-        <a class="section">Tableau de bord</a>
-        <i class="right angle icon divider"></i>
-        <a class="section">Liste des contacts</a>
-        <i class="right angle icon divider"></i>
-        <div class="active section">Glenn Cavarlé</div>
+
+        {% for link in breadcrumbs %}
+            {% if not loop.first %}
+                <i class="right angle icon divider"></i>
+            {% endif %}
+            <a href="{{link.href}}" class="section {{loop.last ? 'active' }}">{{link.label}}</a>
+        {% endfor %}
+
     </div>
 {% endblock %}
