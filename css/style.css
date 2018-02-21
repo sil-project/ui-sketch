@@ -71,10 +71,6 @@ body.pushable .pusher {
     min-width: 6em;
 }
 
-#contact-note-field {
-    display: inline;
-}
-
 .ui.toggler {
     background-color: #2185d0;
     border-color    : #1B6AA6;

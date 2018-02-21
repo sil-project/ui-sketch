@@ -1,0 +1,11 @@
+#contact-notes {
+  width: 100%;
+}
+
+#contact-note-field {
+  display: inline;
+}
+
+#contact .card .content {
+  flex-grow: 0
+}
