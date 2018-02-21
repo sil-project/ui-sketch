@@ -19,6 +19,10 @@ module.exports = {
     email: {
       label: 'Email',
       value: 'glenn.cavarle@libre-informatique.fr'
+    },
+    position: {
+      label: 'Position',
+      value: 'Developer'
     }
   }
 };

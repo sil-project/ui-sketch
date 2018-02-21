@@ -9,7 +9,7 @@ app.use(function(req, res, next) {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
   res.header('Expires', '-1');
   res.header('Pragma', 'no-cache');
-  next()
+  next();
 });
 
 app.use('/js', express.static('js'));
@@ -28,7 +28,7 @@ app.set('twig options', {
 
 
 app.get('/', function(req, res) {
-  res.render('Contact/index.html.twig', require_nc(__dirname + '/data/contact-index'));
+  res.render('Contact/show.html.twig', require_nc(__dirname + '/data/contact-index'));
 });
 
 app.listen(9999);

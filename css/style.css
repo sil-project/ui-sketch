@@ -19,3 +19,7 @@ i.rounded.icon {
 .ui.vertical.menu>.item:first-child, body.pushable, body.pushable .pusher {
   background-color: #f5f5f5;
 }
+
+#contact-note-field {
+  display: inline;
+}

@@ -1,14 +1,10 @@
 <html>
 
     <head>
+      {% block stylesheets %}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-        <script src="/js/modal-confirmation.js"></script>
-        <script src="/js/script.js"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css">
-
+      {% endblock %}
     </head>
 
     <body class="pushable">
@@ -32,7 +28,13 @@
 
         {% include '@Template/Modal/_confirmation.html.twig' %}
 
-        <script type="application/javascript"></script>
+        {% block javascripts %}
+          <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+          <script src="/js/modal-confirmation.js"></script>
+          <script src="/js/script.js"></script>
+        {% endblock %}
     </body>
 
 </html>
