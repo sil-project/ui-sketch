@@ -1,4 +1,17 @@
 module.exports = {
+  breadcrumbs: [{
+      label: 'Tableau de bord',
+      href: '#'
+    },
+    {
+      label: 'Liste des contacts',
+      href: '#'
+    },
+    {
+      label: 'Romain Sanchez',
+      href: '#'
+    }
+  ],
   page: {
     header: {
       icon: 'user',
@@ -9,15 +22,15 @@ module.exports = {
   view: {
     firstname: {
       label: 'Prénom',
-      value: 'Glenn'
+      value: 'Romain'
     },
     lastname: {
       label: 'Nom',
-      value: 'Cavarlé'
+      value: 'Sanchez'
     },
     email: {
       label: 'Email',
-      value: 'glenn.cavarle@libre-informatique.fr'
+      value: 'romain.sanchez@libre-informatique.fr'
     },
     position: {
       label: 'Position',

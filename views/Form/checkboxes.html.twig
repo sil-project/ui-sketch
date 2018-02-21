@@ -1,0 +1,11 @@
+<div class="grouped fields">
+    <label>{{ field.label }}</label>
+    {% for value in field.form.values %}
+        <div class="field {% if field.form.inline == true %}inline{% endif %}">
+            <div class="ui toggle checkbox">
+                <input name="{{ field.name }}[]" tabindex="{{ loop.index0 }}" class="hidden" type="checkbox" value="{{ value }}" {% if field.value|split(',') == value %} checked="checked" {% endif %}>
+                <label>{{ value }}</label>
+            </div>
+        </div>
+    {% endfor %}
+</div>

@@ -1,4 +1,17 @@
 module.exports = {
+  breadcrumbs: [{
+      label: 'Tableau de bord',
+      href: '#'
+    },
+    {
+      label: 'Liste des produits',
+      href: '#'
+    },
+    {
+      label: 'AWE-INC-0512',
+      href: '#'
+    }
+  ],
   page: {
     header: {
       icon: 'archive',
@@ -33,6 +46,79 @@ module.exports = {
       value: true,
       form: {
         type: 'checkbox'
+      }
+    }
+  },
+  create: {
+    name: {
+      label: 'Nom',
+      form: {
+        type: 'text'
+      }
+    },
+    code: {
+      label: 'Référence',
+      form: {
+        type: 'text'
+      }
+    },
+    description: {
+      label: 'Description',
+      form: {
+        type: 'textarea'
+      }
+    },
+    options: {
+      label: 'Types d\'options',
+      form: {
+        type: 'checkboxes',
+        values: ['Couleur', 'Packaging', 'Taille', 'Pointure']
+      }
+    },
+    optionsValues_Couleur: {
+      label: 'Couleur',
+      form: {
+        type: 'checkboxes',
+        values: ['Rouge', 'Bleu', 'Jaune', 'Noir', 'Vert']
+      }
+    },
+    optionsValues_Packaging: {
+      label: 'Packaging',
+      form: {
+        type: 'checkboxes',
+        values: ['Édition standard', 'Édition Deluxe', 'Édition limitée']
+      }
+    },
+    optionsValues_Taille: {
+      label: 'Taille',
+      form: {
+        type: 'checkboxes',
+        values: [
+          'S',
+          'M',
+          'L',
+          'XL',
+          '2XL',
+          '3XL'
+        ]
+      }
+    },
+    optionsValues_Pointure: {
+      label: 'Taille',
+      form: {
+        type: 'checkboxes',
+        values: [
+          '36',
+          '37',
+          '38',
+          '39',
+          '40',
+          '41',
+          '42',
+          '43',
+          '44',
+          '45'
+        ]
       }
     }
   },
@@ -354,7 +440,6 @@ module.exports = {
           values: ['Édition Standard', 'Édition Deluxe']
         }
       }
-    },
-
+    }
   }
 };

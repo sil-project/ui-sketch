@@ -181,6 +181,10 @@ ipaddr.js@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.6.0.tgz#e3fa357b773da619f26e95f049d055c72796f86b"
 
+jquery-address@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/jquery-address/-/jquery-address-1.6.0.tgz#c8ca4bae2dea368e9822494bd2dd413faf4a62b8"
+
 jquery@^3.3.1, jquery@x.*:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"

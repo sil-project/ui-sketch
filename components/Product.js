@@ -1,12 +1,18 @@
 module.exports = {
 
   routes: function(app) {
-    app.get('/product', function(req, res) {
-      res.render('Product/index.html.twig', require_nc(__data + '/Product/product-index'));
-    });
 
-    app.post('/product', function(req, res) {
-      res.render('Product/index.html.twig', require_nc(__data + '/Product/product-index'));
+    app.route('/product')
+      .get(function(req, res) {
+        res.render('Product/index.html.twig', require_data('Product/index'));
+      })
+      .post(function(req, res) {
+        res.render('Product/index.html.twig', require_data('Product/index'));
+      });
+
+
+    app.get('/product/create', function(req, res) {
+      res.render('Product/create.html.twig', require_data('Product/index'));
     });
   }
 
