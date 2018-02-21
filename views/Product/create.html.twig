@@ -30,87 +30,96 @@
 {% endblock %}
 
 {% block page_content %}
-<div class="ui segment center aligned">
-    <div class="step content">
-        <div class="description active" data-step="id">
-            {{ macros.display_form_group(create, ['name', 'description', 'code']) }}
-        </div>
-        <div class="description" data-step="options">
-            {{ macros.display_form_group(create, ['options']) }}
-        </div>
-        <div class="description" data-step="variants">
-            {{ macros.display_form_group(create, ['optionsValues_Couleur','optionsValues_Packaging']) }}
-            {{ macros.display_form_group(create, ['optionsValues_Taille','optionsValues_Pointure']) }}
-            <div class="ui divider"></div>
-            <div class="ui buttons">
-                <button class="ui button">Annuler</button>
-                <div class="or" data-text="ou"></div>
-                <button class="ui positive button">Créer</button>
+
+    <div class="ui stackable grid">
+
+        <div class="twelve wide column">
+
+            <div class="ui segment center aligned">
+                <div class="step content">
+                    <div class="description active" data-step="id">
+                        {{ macros.display_form_group(create, ['name', 'description', 'code']) }}
+                    </div>
+                    <div class="description" data-step="options">
+                        {{ macros.display_form_group(create, ['options']) }}
+                    </div>
+                    <div class="description" data-step="variants">
+                        {{ macros.display_form_group(create, ['optionsValues_Couleur','optionsValues_Packaging']) }}
+                        {{ macros.display_form_group(create, ['optionsValues_Taille','optionsValues_Pointure']) }}
+                        <div class="ui divider"></div>
+                        <div class="ui buttons">
+                            <button class="ui button">Annuler</button>
+                            <div class="or" data-text="ou"></div>
+                            <button class="ui positive button">Créer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <div class="ui left labeled icon button disabled prev step">
+                        Étape précédente
+                        <i class="angle left icon"></i>
+                    </div>
+                    <div class="ui green right labeled icon button next step">
+                        Étape suivante
+                        <i class="angle right icon"></i>
+                    </div>
+                </div>
+
             </div>
+
         </div>
+
     </div>
 
-    <div class="actions">
-        <div class="ui left labeled icon button disabled prev step">
-            Étape précédente
-            <i class="angle left icon"></i>
-        </div>
-        <div class="ui green right labeled icon button next step">
-            Étape suivante
-            <i class="angle right icon"></i>
-        </div>
-    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
 
-</div>
-
-<script>
-    $(document).ready(function() {
-
-        $(document).on('click', '.ui.button.next.step:not(.disabled)', function() {
-            moveStep();
-        }).on('click', '.ui.button.prev.step:not(.disabled)', function() {
-            moveStep(true);
-        });
-
-        function moveStep(prev) {
-            var steps = $('.ui.steps .step');
-            var currentStep = steps.filter('.active');
-            var stepContents = $('.step.content .description');
-            var currentStepContent = stepContents.filter('[data-step="' + currentStep.attr('data-name') + '"]');
-
-            var nextButton = $('.ui.button.next.step');
-            var prevButton = $('.ui.button.prev.step');
-
-            nextButton.removeClass('disabled');
-            prevButton.removeClass('disabled');
-
-            currentStep.removeClass('active');
-
-            currentStepContent.transition({
-                'animation': 'scale',
-                onComplete: function() {
-                    currentStepContent.removeClass('active');
-                    if (prev == true) {
-                        currentStep = $(steps.get(currentStep.index() - 1));
-                    } else {
-                        currentStep = $(steps.get(currentStep.index() + 1));
-                    }
-                    currentStepContent = stepContents.filter('[data-step="' + currentStep.attr('data-name') + '"]');
-
-                    currentStepContent.transition('scale').addClass('active');
-                    currentStep.addClass('active');
-
-                    if (currentStep.is(':first-child')) {
-                        prevButton.addClass('disabled');
-                    }
-
-                    if (currentStep.is(':last-child')) {
-                        nextButton.addClass('disabled');
-                    }
-                }
+            $(document).on('click', '.ui.button.next.step:not(.disabled)', function() {
+                moveStep();
+            }).on('click', '.ui.button.prev.step:not(.disabled)', function() {
+                moveStep(true);
             });
-        }
-    });
-</script>
+
+            function moveStep(prev) {
+                var steps = $('.ui.steps .step');
+                var currentStep = steps.filter('.active');
+                var stepContents = $('.step.content .description');
+                var currentStepContent = stepContents.filter('[data-step="' + currentStep.attr('data-name') + '"]');
+
+                var nextButton = $('.ui.button.next.step');
+                var prevButton = $('.ui.button.prev.step');
+
+                nextButton.removeClass('disabled');
+                prevButton.removeClass('disabled');
+
+                currentStep.removeClass('active');
+
+                currentStepContent.transition({
+                    'animation': 'scale',
+                    onComplete: function() {
+                        currentStepContent.removeClass('active');
+                        if (prev == true) {
+                            currentStep = $(steps.get(currentStep.index() - 1));
+                        } else {
+                            currentStep = $(steps.get(currentStep.index() + 1));
+                        }
+                        currentStepContent = stepContents.filter('[data-step="' + currentStep.attr('data-name') + '"]');
+
+                        currentStepContent.transition('scale').addClass('active');
+                        currentStep.addClass('active');
+
+                        if (currentStep.is(':first-child')) {
+                            prevButton.addClass('disabled');
+                        }
+
+                        if (currentStep.is(':last-child')) {
+                            nextButton.addClass('disabled');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 
 {% endblock %}
