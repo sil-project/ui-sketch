@@ -29,6 +29,10 @@ $(document).ready(function() {
 
         modal.modal('setting', 'transition', 'pulse').modal('show');
     });
+
+    $('.ui.calendar').each(function(i, item) {
+        $(item).calendar({type: $(item).attr('data-type')});
+    });
 });
 
 jQuery.fn.toggleableForm = function() {

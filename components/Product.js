@@ -14,6 +14,11 @@ module.exports = {
     app.get('/product/create', function(req, res) {
       res.render('Product/create.html.twig', require_data('Product/index'));
     });
+
+    app.route('/product/list')
+      .get(function(req, res) {
+        res.render('Product/list.html.twig', require_data('Product/list'));
+      })
   }
 
 }

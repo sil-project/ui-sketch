@@ -12,6 +12,11 @@ module.exports = {
       label: "Produits",
       icon: "cubes",
       children: [{
+        label: "Liste des produits",
+        icon: 'list',
+        href: '/product/list',
+        children: []
+      },{
         label: "Fiche d'un produit",
         icon: 'cube',
         href: '/product',

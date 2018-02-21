@@ -1,0 +1,15 @@
+<div class="ui menu">
+    {% include '@Template/List/Filter/select.html.twig' %}
+    <div class="right menu">
+        {% include '@Template/List/Table/export.html.twig' %}
+    </div>
+</div>
+<form class="ui form">
+    {% for filter in list.filters %}
+        <div class="ui segment hidden" data-filter="{{ filter.field }}">
+            {% include '@Template/Form/' ~ filter.type ~ '.html.twig' with {
+                'field' : filter
+            } %}
+        </div>
+    {% endfor %}
+</form>

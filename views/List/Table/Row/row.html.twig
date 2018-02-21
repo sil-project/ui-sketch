@@ -1,0 +1,16 @@
+<tr>
+    <td class="collapsing">
+        <div class="ui fitted checkbox">
+            <input type="checkbox">
+            <label></label>
+        </div>
+    </td>
+    {% for header in list.headers %}
+        <td>
+            {{ item[header.name] }}
+        </td>
+    {% endfor %}
+    <td class="right aligned collapsing">
+        {% include '@Template/List/Table/Row/actions.html.twig' %}
+    </td>
+</tr>

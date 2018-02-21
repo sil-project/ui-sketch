@@ -1,0 +1,14 @@
+{% extends "@Template/Show/index.html.twig" %}
+{% import "@Template/Macro/_common.html.twig" as macros %}
+
+{% block page_content %}
+    <div class="ui stackable grid">
+
+        <div class="sixteen wide column">
+
+            {% include '@Template/List/index.html.twig' %}
+
+        </div>
+
+    </div>
+{% endblock %}

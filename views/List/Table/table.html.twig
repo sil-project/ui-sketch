@@ -1,0 +1,13 @@
+<table class="ui very compact small blue celled stackable selectable table">
+    <thead>
+        {% include '@Template/List/Table/header.html.twig' %}
+    </thead>
+    <tbody>
+        {% for item in list.elements %}
+            {% include '@Template/List/Table/Row/row.html.twig' %}
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        {% include '@Template/List/Table/footer.html.twig' %}
+    </tfoot>
+</table>
