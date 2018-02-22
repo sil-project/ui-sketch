@@ -1,0 +1,16 @@
+<div class="ui two column stackable grid">
+    <div class="eight wide column">
+        <div class="ui clearing segment with form">
+            <h4 class="ui header">Adresse de facturation</h4>
+            <div class="ui divider"></div>
+            {{ macros.field_group(invoiceAddress, ['street', 'postCode', 'city'], true) }}
+        </div>
+    </div>
+    <div class="eight wide column">
+        <div class="ui clearing segment with form">
+            <h4 class="ui header">Adresse de livraison</h4>
+            <div class="ui divider"></div>
+            {{ macros.field_group(deliveryAddress, ['street', 'postCode', 'city'], true) }}
+        </div>
+    </div>
+</div>
