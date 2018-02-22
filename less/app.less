@@ -1,5 +1,7 @@
 @import 'lib/semantic-ui/semantic-ui-less/site.variables';
 
+@import 'List/list';
+
 /* latin-ext */
 @font-face {
   font-family: 'Raleway';
@@ -37,7 +39,7 @@ i.rounded.icon {
     border          : 1px solid #d4d4d5;
     width           : 2em !important;
     height          : 2em !important;
-    background-color: #fff;
+    background-color: @white;
 }
 
 .ui.vertical.menu > .item:first-child,
@@ -63,14 +65,14 @@ body.pushable .pusher {
 }
 
 .ui.empty.white {
-    background-color: white;
+    background-color: @white;
     opacity         : 1;
 }
 
 .ui.blue.block.header {
     background-color: @primaryColor;
     border-color    : @primaryColor;
-    color           : white !important;
+    color           : @white !important;
 }
 
 .ui.styled.accordion .content,
@@ -95,7 +97,7 @@ body.pushable .pusher {
 
 .ui.toggler {
     background-color: @primaryColor;
-    border-color    : #1B6AA6;
+    border-color    : @secondaryColor;
     border-radius   : 0 0 0.3em 0.3em;
     position        : relative;
     top             : -1.25em;
@@ -119,7 +121,7 @@ body.pushable .pusher {
 
 .ui.toggler .icon,
 .ui.toggler .icon:only-child {
-    color : white;
+    color : @white;
     margin: 0.75em 0.3em 0.5em;
 }
 
@@ -141,8 +143,8 @@ body.pushable .pusher {
 }
 
 .ui.menu:not(.vertical) > .item > .ui.compact.dropdown.primary > .ui.label {
-    color     : #1e70bf;
-    background: white;
+    color     : @primaryColor;
+    background: @white;
     border    : none;
     box-shadow: none;
 }

@@ -1,15 +1,15 @@
 module.exports = {
   breadcrumbs: [{
       label: 'Tableau de bord',
-      href: '#'
+      href: '/'
     },
     {
       label: 'Liste des produits',
-      href: '#'
+      href: '/product/list'
     },
     {
       label: 'AWE-INC-0512',
-      href: '#'
+      href: '/product'
     }
   ],
   page: {

@@ -1,17 +1,12 @@
 <div class="ui menu">
 
     <div class="item">
-        <div class="ui primary floating compact multiple dropdown labeled icon button filter list">
+        <div class="ui primary floating compact multiple dropdown right labeled icon button filter list">
             <i class="filter icon"></i>
             <input name="filters" type="hidden">
             <span class="text">Filtres</span>
 
             <div class="menu">
-                <div class="ui icon search input">
-                    <i class="search icon"></i>
-                    <input placeholder="Recherche un filtre..." type="text">
-                </div>
-
                 <div class="scrolling menu">
                     {% for filter in list.filters %}
                         <div class="item" data-value="{{ filter.name }}">
@@ -31,11 +26,11 @@
 
 </div>
 
-<form class="ui form">
+<form class="ui form filters segments">
 
     {% for filter in list.filters %}
 
-        <div class="ui segment" data-filter="{{ filter.name }}">
+        <div class="ui segment filter" data-name="{{ filter.name }}">
             {% include '@Template/Form/' ~ filter.type ~ '.html.twig' with {
                 'field' : filter
             } %}
