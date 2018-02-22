@@ -5,6 +5,7 @@ var server = {
     global.fs || (global.fs = require('fs'));
     global.path || (global.path = require('path'));
     global.extend || (global.extend = require('extend'));
+    global.lessExpress || (global.lessExpress = require('less-express'));
 
     //global constants
     global.__base = rootDir;
@@ -42,6 +43,7 @@ var server = {
     this.app.use('/img', this.express.static('img'));
     this.app.use('/css', this.express.static('css'));
     this.app.use('/dep', this.express.static('node_modules'));
+    this.app.use('/fonts', this.express.static('fonts'));
 
     this.app.set('views', __base + '/views');
     this.app.set('view engine', 'twig');
@@ -56,6 +58,10 @@ var server = {
 
   start: function(port) {
     var app = this.app;
+
+    app.get('/css/semantic.css', global.lessExpress(__base + '/less/lib/semantic-ui/semantic.less', {}, {cache: true}));
+    app.get('/css/app.css', global.lessExpress(__base + '/less/app.less', {}, {cache: 0}));
+
     //load components
     fs.readdir(__components, function(err, items) {
       for (var i = 0; i < items.length; i++) {

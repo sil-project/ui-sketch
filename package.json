@@ -8,9 +8,11 @@
     "extend": "^3.0.1",
     "jquery": "^3.3.1",
     "jquery-address": "^1.6.0",
+    "less-express": "^1.1.0",
     "require-nocache": "^1.0.0",
-    "semantic-ui-calendar": "^0.0.8",
+    "semantic-ui-calendar": "0.0.8",
     "semantic-ui-css": "^2.3.0",
+    "semantic-ui-less": "^2.3.0",
     "twig": "^1.10.5"
   },
   "devDependencies": {},
