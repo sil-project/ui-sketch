@@ -22,7 +22,21 @@ module.exports = {
         href: '/product',
         children: []
       }]
-    }
+  },{
+    label: "Commandes",
+    icon: "tasks",
+    children: [{
+      label: "Liste des commandes",
+      icon: 'list',
+      href: '/order/list',
+      children: []
+    },{
+      label: "Commande CMD00000512",
+      icon: 'file alternate outline',
+      href: '/order',
+      children: []
+    }]
+  }
 
   ]
 };

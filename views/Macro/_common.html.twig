@@ -32,8 +32,6 @@
             {% for fieldname in fields %}
                 {% set field = attribute(view, fieldname) %}
 
-
-
                 {% include '@Template/Form/' ~ field.form.type ~ '.html.twig' with {
                     'field' : field
                 } %}

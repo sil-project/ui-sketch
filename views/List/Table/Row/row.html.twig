@@ -10,7 +10,9 @@
             {{ item[header.name] }}
         </td>
     {% endfor %}
-    <td class="right aligned collapsing">
-        {% include '@Template/List/Table/Row/actions.html.twig' %}
-    </td>
+    {% if list.options.actions | length > 0 %}
+        <td class="right aligned collapsing">
+            {% include '@Template/List/Table/Row/actions.html.twig' %}
+        </td>
+    {% endif %}
 </tr>

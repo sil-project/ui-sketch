@@ -30,5 +30,8 @@ $(document).ready(function() {
         var filterElement = filters.find('.ui.filter[data-name="' + value + '"]');
         filterElement.transition('slide down');
         filterElement.prependTo(filters);
+        if (cal = filterElement.find('.ui.calendar')) {
+            cal.calendar();
+        }
     }
 });

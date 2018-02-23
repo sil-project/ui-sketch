@@ -10,5 +10,7 @@
             {{ header.label }}
         </th>
     {% endfor %}
-    <th></th>
+    {% if list.options.actions | length > 0 %}
+        <th></th>
+    {% endif %}
 </tr>

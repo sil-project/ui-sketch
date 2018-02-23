@@ -1,0 +1,20 @@
+<div class="ui two column stackable grid">
+    <div class="eight wide column">
+        <div class="ui clearing segment with form">
+            <h4 class="ui header">Informations générales</h4>
+            <div class="ui divider"></div>
+            {{ macros.field_group(view, ['code', 'source'], true) }}
+        </div>
+    </div>
+    <div class="eight wide column">
+        <div class="ui clearing segment">
+
+            <h4 class="ui header">
+                Compte
+                <a href="/contact" class="ui blue right ribbon label" style="transform: translateX(-162%);">Voir la fiche</a>
+            </h4>
+            <div class="ui divider"></div>
+            {{ macros.field_group(account, ['firstname', 'lastname', 'email']) }}
+        </div>
+    </div>
+</div>

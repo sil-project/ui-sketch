@@ -4,7 +4,7 @@
 {% block page_header %}
 
     <h1 class="ui center aligned header">
-        <div class="ui stackable steps">
+        <div class="ui stackable three steps">
             <div class="active step" data-name="id">
                 <i class="info icon"></i>
                 <div class="content">
@@ -41,13 +41,13 @@
 
             <div class="ui segment">
                 <div class="step content">
-                    <div class="description active" data-step="id">
+                    <div class="step active" data-step="id">
                         {{ macros.display_form_group(create, ['name', 'description', 'code']) }}
                     </div>
-                    <div class="description" data-step="options">
+                    <div class="step" data-step="options">
                         {{ macros.display_form_group(create, ['options']) }}
                     </div>
-                    <div class="description ui grid" data-step="variants">
+                    <div class="step ui grid" data-step="variants">
                         <div class="seven wide column">
                             {{ macros.display_form_group(create, ['optionsValues_Couleur','optionsValues_Taille']) }}
                         </div>
@@ -79,54 +79,5 @@
 {% block javascripts %}
     {{ parent() }}
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-
-            $(document).on('click', '.ui.button.next.step:not(.disabled)', function() {
-                moveStep();
-            }).on('click', '.ui.button.prev.step:not(.disabled)', function() {
-                moveStep(true);
-            });
-
-            function moveStep(prev) {
-                var steps = $('.ui.steps .step');
-                var currentStep = steps.filter('.active');
-                var stepContents = $('.step.content .description');
-                var currentStepContent = stepContents.filter('[data-step="' + currentStep.attr('data-name') + '"]');
-
-                var nextButton = $('.ui.button.next.step');
-                var prevButton = $('.ui.button.prev.step');
-
-                nextButton.removeClass('disabled');
-                prevButton.removeClass('disabled');
-
-                currentStep.removeClass('active');
-
-                currentStepContent.transition({
-                    'animation': 'slide left',
-                    'duration': 200,
-                    onComplete: function() {
-                        currentStepContent.removeClass('active');
-                        if (prev == true) {
-                            currentStep = $(steps.get(currentStep.index() - 1));
-                        } else {
-                            currentStep = $(steps.get(currentStep.index() + 1));
-                        }
-                        currentStepContent = stepContents.filter('[data-step="' + currentStep.attr('data-name') + '"]');
-
-                        currentStepContent.transition({'animation': 'slide right', 'duration': 200}).addClass('active');
-                        currentStep.addClass('active');
-
-                        if (currentStep.is(':first-child')) {
-                            prevButton.addClass('disabled');
-                        }
-
-                        if (currentStep.is(':last-child')) {
-                            nextButton.addClass('disabled');
-                        }
-                    }
-                });
-            }
-        });
-    </script>
+    <script type="text/javascript" src="/js/steps.js"></script>
 {% endblock %}
