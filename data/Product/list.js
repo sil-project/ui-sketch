@@ -15,6 +15,23 @@ module.exports = {
         }
     },
     list: {
+        options: {
+            actions: [
+                {
+                    label: 'Voir',
+                    icon: 'eye'
+                }, {
+                    label: 'Archiver',
+                    icon: 'archive'
+                }, {
+                    label: 'Gérer les stocks',
+                    icon: 'cube'
+                }, {
+                    label: 'Activer',
+                    icon: 'check circle outline'
+                }
+            ]
+        },
         headers: [
             {
                 name: 'name',
