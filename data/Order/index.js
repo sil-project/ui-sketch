@@ -14,7 +14,7 @@ module.exports = {
     page: {
         header: {
             icon: 'tasks',
-            title: 'Order #CMD00000512',
+            title: 'Commande #CMD00000512',
             description: ''
         }
     },
@@ -117,12 +117,8 @@ module.exports = {
                 label: 'État',
                 type: 'select',
                 form: {
-                    values: ['Valide', 'Brouillon', 'Annulé', 'Archivé']
+                    values: ['Valide', 'Brouillon', 'Annulée', 'Archivée']
                 }
-            }, {
-                name: 'active',
-                label: 'Actif',
-                type: 'checkbox'
             }
         ],
         headers: [

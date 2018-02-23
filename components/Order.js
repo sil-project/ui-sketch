@@ -12,7 +12,7 @@ module.exports = {
 
 
     app.get('/order/create', function(req, res) {
-      res.render('Order/create.html.twig', require_data('Order/index'));
+      res.render('Order/create.html.twig', require_data('Order/create'));
     });
 
     app.route('/order/list')
