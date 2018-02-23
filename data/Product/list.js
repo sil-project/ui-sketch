@@ -15,28 +15,6 @@ module.exports = {
         }
     },
     list: {
-        filters: [
-            {
-                name: 'name',
-                label: 'Nom',
-                type: 'text'
-            }, {
-                name: 'createdAt',
-                label: 'Date de création',
-                type: 'datetime'
-            }, {
-                name: 'state',
-                label: 'État',
-                type: 'select',
-                form: {
-                    values: ['Valide', 'Brouillon', 'Annulé', 'Archivé']
-                }
-            }, {
-                name: 'active',
-                label: 'Actif',
-                type: 'checkbox'
-            }
-        ],
         headers: [
             {
                 name: 'name',

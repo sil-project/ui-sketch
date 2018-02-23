@@ -93,7 +93,7 @@
                         </tr>
                     </tfoot>
                 </table>
-                <a class="ui button labeled icon green right floated">
+                <a class="ui button labeled icon green right floated" data-modal="productSelector">
                     <i class="plus circle icon"></i>
                     Ajouter un produit
                 </a>
@@ -101,3 +101,5 @@
         </div>
     </div>
 </div>
+
+{% include '@Template/Order/Modal/productSelector.html.twig' %}
