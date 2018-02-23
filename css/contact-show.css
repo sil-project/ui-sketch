@@ -10,10 +10,6 @@
   flex-grow: 0
 }
 
-#contact .make-default {
-  display: none;
-}
-
 #contact .contact-phone {
   height: 50px;
 }

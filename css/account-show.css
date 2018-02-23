@@ -1,0 +1,13 @@
+#account-type {
+  margin-left: 2.5rem;
+}
+
+#account .contact-card {
+  margin-right: 10px;
+  width: 450px;
+}
+
+#orders {
+  display: block;
+  margin-top: 10px;
+}
