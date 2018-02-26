@@ -69,7 +69,7 @@ var server = {
   start: function(port) {
     var app = this.app;
 
-    app.get('/css/semantic.css', global.lessExpress(__base + '/less/lib/semantic-ui/semantic.less', {}, {cache: true}));
+    // app.get('/css/semantic.css', global.lessExpress(__base + '/less/lib/semantic-ui/semantic.less', {}, {cache: true}));
     app.get('/css/app.css', global.lessExpress(__base + '/less/app.less', {}, {cache: 0}));
     app.get('/css/app-dark.css', global.lessExpress(__base + '/less/app-dark.less', {}, {cache: 0}));
 

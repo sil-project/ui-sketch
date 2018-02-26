@@ -3,13 +3,13 @@
 
     <head>
         {% block stylesheets %}
-            <link rel="stylesheet" href="/css/semantic.css">
             <link rel="stylesheet" href="/dep/semantic-ui-calendar/dist/calendar.min.css"/>
 
             {% if theme == 'dark'%}
-                <link rel="stylesheet" href="/css/semantic.superhero.css">
+                <link rel="stylesheet" href="/css/semantic-superhero.min.css">
                 <link rel="stylesheet" href="/css/app-dark.css">
             {% else %}
+                <link rel="stylesheet" href="/css/semantic-librinfo.min.css">
                 <link rel="stylesheet" href="/css/app.css">
             {% endif %}
 
@@ -37,7 +37,7 @@
 
         {% block javascripts %}
             <script src="/dep/jquery/dist/jquery.min.js"></script>
-            <script src="/dep/semantic-ui-css/semantic.min.js"></script>
+            <script src="/js/semantic.min.js"></script>
             <script src="/dep/jquery-address/src/jquery.address.js"></script>
             <script src="/dep/semantic-ui-calendar/dist/calendar.min.js"></script>
             <script src="/js/modal-confirmation.js"></script>
