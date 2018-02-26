@@ -1,4 +1,4 @@
-<div class="ui two column stackable grid">
+<div class="ui two column stackable stretched grid">
     <div class="eight wide column">
         <div class="ui clearing segment with form">
             <h4 class="ui header">Informations générales</h4>
@@ -7,14 +7,75 @@
         </div>
     </div>
     <div class="eight wide column">
-        <div class="ui clearing segment">
+        <div class="ui clearing segment with form">
 
             <h4 class="ui header">
-                Compte
-                <a href="/contact" class="ui blue right ribbon label" style="transform: translateX(-162%);">Voir la fiche</a>
+                Compte <a href="/contact" class="ui"><i class="external link alternate icon"></i></a>
             </h4>
             <div class="ui divider"></div>
             {{ macros.field_group(account, ['firstname', 'lastname', 'email']) }}
+
+            <form class="ui form data" method="POST" action="">
+                <div class="ui floating dropdown labeled search icon blue button">
+                    <i class="folder open icon"></i>
+                    <input name="country" type="hidden">
+                    <div class="default text">Rechercher un compte existant</div>
+                    <div class="menu">
+                        <div class="item" data-value="jenny">
+                            <img class="ui mini avatar image" src="/img/jenny.jpg">
+                            <b>Jenny Hess</b>
+                            -
+                            <i>jenny.hess@example.eu</i>
+                        </div>
+                        <div class="item" data-value="elliot">
+                            <img class="ui mini avatar image" src="/img/elliot.jpg">
+                            <b>Elliot Fu</b>
+                            -
+                            <i>elliot.fu@example.eu</i>
+                        </div>
+                        <div class="item" data-value="stevie">
+                            <img class="ui mini avatar image" src="/img/stevie.jpg">
+                            <b>Stevie Feliciano</b>
+                            -
+                            <i>stevie.feliciano@example.eu</i>
+                        </div>
+                        <div class="item" data-value="christian">
+                            <img class="ui mini avatar image" src="/img/christian.jpg">
+                            <b>Christian</b>
+                            -
+                            <i>christian@example.eu</i>
+                        </div>
+                        <div class="item" data-value="matt">
+                            <img class="ui mini avatar image" src="/img/matt.jpg">
+                            <b>Matt</b>
+                            -
+                            <i>matt@example.eu</i>
+                        </div>
+                        <div class="item" data-value="justen">
+                            <img class="ui mini avatar image" src="/img/justen.jpg">
+                            <b>Justen Kitsune</b>
+                            -
+                            <i>justen.kitsune@example.eu</i>
+                        </div>
+                        <div class="item" data-value="justen">
+                            <img class="ui mini avatar image" src="/img/li-logo.png">
+                            <b>Libre-Informatique</b>
+                            -
+                            <i>contact@libre-informatique.fr</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui divider"></div>
+                <button class="ui button labeled icon submit positive right floated" type="submit">
+                    <i class="save icon"></i>
+                    Enregistrer
+                </button>
+                <a class="ui button labeled icon left floated close">
+                    <i class="undo icon"></i>
+                    Annuler
+                </a>
+            </form>
         </div>
     </div>
 </div>

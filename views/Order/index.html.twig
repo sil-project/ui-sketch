@@ -46,19 +46,22 @@
 {% endblock %}
 
 {% block page_content %}
-    <div class="ui stackable grid">
+    <div class="ui stackable padded grid">
 
         <div class="twelve wide column">
+
             <h2 class="ui header">
                 Général
             </h2>
             {% include "@Template/Order/Content/general.html.twig" %}
             <div class="ui divider"></div>
+
             <h2 class="ui header">
                 Adresses
             </h2>
             {% include "@Template/Order/Content/addresses.html.twig" %}
             <div class="ui divider"></div>
+
             <h2 class="ui header">
                 Produits
             </h2>
