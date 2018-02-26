@@ -1,7 +1,5 @@
 @import 'lib/semantic-ui/semantic-ui-less/site.variables';
-
 @import 'List/list';
-
 /* latin-ext */
 @font-face {
     font-family  : 'Raleway';
@@ -19,13 +17,112 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/**
+ * Picked from https://gist.github.com/bl4ck5un/ed27db3d653011b32ee0877058abac7d
+ */
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+    [class*="computer only"]:not(.mobile),
+    [class*="large screen only"]:not(.mobile),
+    [class*="mobile hidden"],
+    [class*="tablet only"]:not(.mobile),
+    [class*="or lower hidden"],
+    [class*="widescreen only"]:not(.mobile) {
+        display: none !important;
+    }
+}
+
+/* Tablet / iPad Portrait */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    [class*="large screen only"]:not(.tablet),
+    [class*="mobile only"]:not(.tablet),
+    [class*="or lower hidden"]:not(.mobile),
+    [class*="tablet hidden"],
+    [class*="computer only"]:not(.tablet),
+    [class*="widescreen only"]:not(.tablet) {
+        display: none !important;
+    }
+}
+
+/* Computer / Desktop / iPad Landscape */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    [class*="computer hidden"],
+    [class*="large screen only"]:not(.computer),
+    [class*="mobile only"]:not(.computer),
+    [class*="or lower hidden"]:not(.tablet):not(.mobile),
+    [class*="tablet only"]:not(.computer),
+    [class*="widescreen only"]:not(.computer) {
+        display: none !important;
+    }
+}
+
+/* Large Monitor */
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+    [class*="mobile only"]:not([class*="large screen"]),
+    [class*="tablet only"]:not([class*="large screen"]),
+    [class*="computer only"]:not([class*="large screen"]),
+    [class*="large screen hidden"],
+    [class*="widescreen only"]:not([class*="large screen"]),
+    [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+        display: none !important;
+    }
+}
+
+/* Widescreen Monitor */
+@media only screen and (min-width: 1920px) {
+    [class*="mobile only"]:not([class*="widescreen"]),
+    [class*="tablet only"]:not([class*="widescreen"]),
+    [class*="computer only"]:not([class*="widescreen"]),
+    [class*="large screen only"]:not([class*="widescreen"]),
+    [class*="widescreen hidden"],
+    [class*="widescreen or lower hidden"] {
+        display: none !important;
+    }
+}
+
+
 body {
     font-family: 'Raleway','Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+    .ui.fixed.inverted.menu {
+        background-color: @primaryColor;
+
+        .ui.breadcrumb {
+            margin-left: 0.5em;
+
+            a.section {
+                line-height: 2.85rem;
+                color      : @white;
+
+                &:not(:last-child) {
+                    margin-right: 1.5em;
+
+                    &::after {
+                        content    : ' ';
+                        background : transparent url("/img/bc-separator.png") 50% 50% scroll;
+                        width      : 8px;
+                        height     : 40px;
+                        display    : inline;
+                        position   : absolute;
+                        margin-left: 0.5em;
+                        opacity:0.15;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ui.left.sidebar~.fixed.menu,
+.ui.left.sidebar~.pusher {
+    transition: 0.3s all ease;
 }
 
 .ui.visible.left.sidebar~.fixed.menu,
 .ui.visible.left.sidebar~.pusher {
     padding-right: 260px;
+    transition   : 0.3s all ease;
 }
 
 #content {
@@ -159,7 +256,7 @@ body.pushable .pusher {
 }
 
 .ui.make-default {
-  display: none;
+    display: none;
 }
 
 .ui.table {

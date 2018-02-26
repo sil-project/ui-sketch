@@ -18,6 +18,8 @@ var server = {
       var parent = require_nc(path.join(__data, parentFile));
       return extend(true, parent, require_nc(path.join(__data, file)));
     };
+
+    global.theme = 'default';
   },
 
   init: function() {
@@ -45,6 +47,14 @@ var server = {
     this.app.use('/dep', this.express.static('node_modules'));
     this.app.use('/fonts', this.express.static('fonts'));
 
+    this.app.use(function(req,res,next) {
+      if (typeof req.query.theme !== 'undefined') {
+          global.theme = req.query.theme;
+      }
+      res.locals.theme = global.theme;
+      next();
+    });
+
     this.app.set('views', __base + '/views');
     this.app.set('view engine', 'twig');
 
@@ -61,6 +71,7 @@ var server = {
 
     app.get('/css/semantic.css', global.lessExpress(__base + '/less/lib/semantic-ui/semantic.less', {}, {cache: true}));
     app.get('/css/app.css', global.lessExpress(__base + '/less/app.less', {}, {cache: 0}));
+    app.get('/css/app-dark.css', global.lessExpress(__base + '/less/app-dark.less', {}, {cache: 0}));
 
     //load components
     fs.readdir(__components, function(err, items) {

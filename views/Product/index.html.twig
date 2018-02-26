@@ -1,25 +1,25 @@
 {% extends "@Template/Show/index.html.twig" %}
 {% import "@Template/Macro/_common.html.twig" as macros %}
 
-{% block page_header %}
-    <div class="ui basic right floated">
-        <div class="ui labeled icon top left dropdown button primary">
-            <i class="cogs icon"></i>
-            <span class="text">Actions</span>
-            <div class="menu">
-                <a class="item" href="/product/create">
-                    <i class="plus circle icon"></i>
-                    Nouveau produit
-                </a>
-                <a class="item" href="/product">
-                    <i class="archive icon"></i>
-                    Archiver
-                </a>
-            </div>
+{% block page_actions %}
+
+
+<div class="ui right floated">
+    <div class="ui labeled icon top left dropdown button primary">
+        <i class="cogs icon"></i>
+        <span class="text">Actions</span>
+        <div class="menu">
+            <a class="item" href="/product/create">
+                <i class="plus circle icon"></i>
+                Nouveau produit
+            </a>
+            <a class="item" href="/product">
+                <i class="archive icon"></i>
+                Archiver
+            </a>
         </div>
     </div>
-
-    {{ parent() }}
+</div>
 {% endblock %}
 
 {% block page_content %}

@@ -1,10 +1,7 @@
 {% block breadcrumbs %}
-    <div class="ui breadcrumb">
+    <div class="ui breadcrumb tablet or lower hidden">
 
         {% for link in breadcrumbs %}
-            {% if not loop.first %}
-                <i class="right angle icon divider"></i>
-            {% endif %}
             <a href="{{link.href}}" class="section {{loop.last ? 'active' }}">{{link.label}}</a>
         {% endfor %}
 
