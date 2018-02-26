@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.contact-card').hover(function() {
+  $('.contact-card').not('.toggler').hover(function() {
     $(this).find('.make-default').toggle();
   });
 
