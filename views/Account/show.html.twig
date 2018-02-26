@@ -23,166 +23,206 @@
       </h1>
   {% endblock %}
   <div class="ui divider"></div>
-  <div id="account">
-    <div class="ui pointing stackable secondary menu">
-        <a class="active item" data-tab="contacts">Contacts
-            <div class="ui floating circular blue label">7</div>
-        </a>
-        <a class="item" data-tab="orders">Orders
-            <div class="ui floating circular blue label">3</div>
-        </a>
-        <div class="right menu">
-            <div class="ui dropdown item">
-                Actions
-                <div class="menu">
-                    <div class="item">
-                        <a href="/product/create">
-                            <button class="ui labeled compact fluid icon green button">
-                                <i class="plus circle icon"></i>
-                                New account
-                            </button>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="/product">
-                            <button class="ui labeled compact fluid icon yellow button">
-                                <i class="archive icon"></i>
-                                Archiver
-                            </button>
-                        </a>
+  <div class="ui stackable grid">
+    <div class="twelve wide column">
+      <div id="account">
+        <div class="ui pointing stackable secondary menu">
+            <a class="active item" data-tab="contacts">Contacts
+                <div class="ui floating circular blue label">7</div>
+            </a>
+            <a class="item" data-tab="orders">Orders
+                <div class="ui floating circular blue label">3</div>
+            </a>
+            <div class="right menu">
+                <div class="ui dropdown item">
+                    Actions
+                    <div class="menu">
+                        <div class="item">
+                            <a href="/product/create">
+                                <button class="ui labeled compact fluid icon green button">
+                                    <i class="plus circle icon"></i>
+                                    New account
+                                </button>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="/product">
+                                <button class="ui labeled compact fluid icon yellow button">
+                                    <i class="archive icon"></i>
+                                    Archiver
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ui active tab" data-tab="contacts">
-      <div id="contacts" class="ui stackable cards">
-        <div class="ui card contact-card">
-          <div class="ui clearing segment with form content">
-            <div class="ui header">
-              <span>Romain Sanchez</span>
+        <div class="ui active tab" data-tab="contacts">
+          <div id="contacts" class="ui cards">
+            <div class="ui card contact-card">
+              <div class="ui clearing segment with form content">
+                <div class="ui header">
+                  <span>Romain Sanchez</span>
+                </div>
+                {{ macros.display_form_group(view, ['name'], true) }}
+              </div>
+              <div class="content">
+                <div class="ui right floated">
+                  <a class="ui right ribbon teal label">Par défaut</a>
+                </div>
+                <div>
+                  <i class="briefcase icon"></i>
+                  <span>Developer</span>
+                </div>
+                <div>
+                  <i class="at icon"></i>
+                  <a href="">romain.sanchez@libre-informatique.fr</a>
+                </div>
+                <div>
+                  <i class="phone icon"></i>
+                  <span>06 45 65 21 32</span>
+                </div>
+                <div>
+                  <i class="address card icon"></i>
+                  <span>33 rue de la mairie, 29000 Quimper</span>
+                </div>
+              </div>
             </div>
-            {{ macros.display_form_group(view, ['name'], true) }}
-          </div>
-          <div class="content">
-            <div class="ui right floated">
-              <a class="ui right ribbon teal label">Par défaut</a>
+            <div class="ui card contact-card">
+              <div class="ui clearing segment with form content">
+                <div class="ui header">
+                  <span>Romain Sanchez</span>
+                </div>
+                {{ macros.display_form_group(view, ['name'], true) }}
+              </div>
+              <div class="content">
+                <div class="ui right floated label make-default">Par défaut</div>
+                <div>
+                  <i class="briefcase icon"></i>
+                  <span>Developer</span>
+                </div>
+                <div>
+                  <i class="at icon"></i>
+                  <a href="">romain.sanchez@libre-informatique.fr</a>
+                </div>
+                <div>
+                  <i class="phone icon"></i>
+                  <span>06 45 65 21 32</span>
+                </div>
+                <div>
+                  <i class="address card icon"></i>
+                  <span>33 rue de la mairie, 29000 Quimper</span>
+                </div>
+              </div>
             </div>
-            <div>
-              <i class="briefcase icon"></i>
-              <span>Developer</span>
-            </div>
-            <div>
-              <i class="at icon"></i>
-              <a href="">romain.sanchez@libre-informatique.fr</a>
-            </div>
-            <div>
-              <i class="phone icon"></i>
-              <span>06 45 65 21 32</span>
-            </div>
-            <div>
-              <i class="address card icon"></i>
-              <span>33 rue de la mairie, 29000 Quimper</span>
+            <div class="ui card contact-card">
+              <div class="ui clearing segment with form content">
+                <div class="ui header">
+                  <span>Romain Sanchez</span>
+                </div>
+                {{ macros.display_form_group(view, ['name'], true) }}
+              </div>
+              <div class="content">
+                <div class="ui right floated label make-default">Par défaut</div>
+                <div>
+                  <i class="briefcase icon"></i>
+                  <span>Developer</span>
+                </div>
+                <div>
+                  <i class="at icon"></i>
+                  <a href="">romain.sanchez@libre-informatique.fr</a>
+                </div>
+                <div>
+                  <i class="phone icon"></i>
+                  <span>06 45 65 21 32</span>
+                </div>
+                <div>
+                  <i class="address card icon"></i>
+                  <span>33 rue de la mairie, 29000 Quimper</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="ui card contact-card">
-          <div class="ui clearing segment with form content">
-            <div class="ui header">
-              <span>Romain Sanchez</span>
+        <div class="ui tab" data-tab="orders">
+          <div id="orders" class="ui cards">
+            <div class="ui card order">
+              <div class="content">
+                <div class="ui left floated">
+                  <a class="ui left ribbon teal label">Validée</a>
+                </div>
+                <div>
+                  <i class="hashtag icon"></i>
+                  <span>CMD00321220</span>
+                </div>
+                <div>
+                  <i class="clock icon"></i>
+                  <span class="meta">20/12/2017</span>
+                </div>
+                <div class="right floated">
+                  <i class="euro sign icon"></i>
+                  <span>145,95</span>
+                </div>
+              </div>
             </div>
-            {{ macros.display_form_group(view, ['name'], true) }}
-          </div>
-          <div class="content">
-            <div class="ui right floated label make-default">Par défaut</div>
-            <div>
-              <i class="briefcase icon"></i>
-              <span>Developer</span>
-            </div>
-            <div>
-              <i class="at icon"></i>
-              <a href="">romain.sanchez@libre-informatique.fr</a>
-            </div>
-            <div>
-              <i class="phone icon"></i>
-              <span>06 45 65 21 32</span>
-            </div>
-            <div>
-              <i class="address card icon"></i>
-              <span>33 rue de la mairie, 29000 Quimper</span>
-            </div>
-          </div>
-        </div>
-        <div class="ui card contact-card">
-          <div class="ui clearing segment with form content">
-            <div class="ui header">
-              <span>Romain Sanchez</span>
-            </div>
-            {{ macros.display_form_group(view, ['name'], true) }}
-          </div>
-          <div class="content">
-            <div class="ui right floated label make-default">Par défaut</div>
-            <div>
-              <i class="briefcase icon"></i>
-              <span>Developer</span>
-            </div>
-            <div>
-              <i class="at icon"></i>
-              <a href="">romain.sanchez@libre-informatique.fr</a>
-            </div>
-            <div>
-              <i class="phone icon"></i>
-              <span>06 45 65 21 32</span>
-            </div>
-            <div>
-              <i class="address card icon"></i>
-              <span>33 rue de la mairie, 29000 Quimper</span>
+            <div class="ui card order">
+              <div class="content">
+                <div class="ui left floated">
+                  <a class="ui left ribbon yellow label">Brouillon</a>
+                </div>
+                <div>
+                  <i class="hashtag icon"></i>
+                  <span>CMD00321220</span>
+                </div>
+                <div>
+                  <i class="clock icon"></i>
+                <span class="meta">20/12/2017</span>
+                </div>
+                <div class="right floated">
+                  <i class="euro sign icon"></i>
+                  <span>145,95</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="ui tab" data-tab="orders">
-      <div id="orders" class="ui cards">
-        <div class="ui card order">
-          <div class="content">
-            <div class="ui left floated">
-              <a class="ui left ribbon teal label">Validée</a>
+    <div class="four wide column">
+      <div id="notes" class="ui fluid raised card">
+        <div class="content">
+          <div class="header">
+            <h3>Notes</h3>
+          </div>
+        </div>
+        <div class="ui fluid content">
+          <div class="ui fluid form">
+            <div id="contact-note-field" class="twelve wide inline field">
+              <input type="text" class="" placeholder="Add note">
             </div>
-            <div>
-              <i class="hashtag icon"></i>
-              <span>CMD00321220</span>
+            <i id="add-note" class="inverted circular blue add medium icon"></i>
+          </div>
+          <div id="notes" class="ui middle aligned divided list">
+            <div class="item contact-note">
+              <div class="right floated content">
+                <i class="disabled trash icon remove-note"></i>
+              </div>
+              <div class="content">
+                <p>Back in 2 weeks</p>
+                <p class="meta">20/02/18</p>
+              </div>
             </div>
-            <div>
-              <i class="clock icon"></i>
-              <span class="meta">20/12/2017</span>
-            </div>
-            <div class="right floated">
-              <i class="euro sign icon"></i>
-              <span>145,95</span>
+            <div class="item contact-note">
+              <div class="right floated content">
+                <i class="disabled trash icon remove-note"></i>
+              </div>
+              <div class="content">
+                <p>Forgot his pencil</p>
+                <p class="meta">17/01/18</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="ui card order">
-          <div class="content">
-            <div class="ui left floated">
-              <a class="ui left ribbon yellow label">Brouillon</a>
-            </div>
-            <div>
-              <i class="hashtag icon"></i>
-              <span>CMD00321220</span>
-            </div>
-            <div>
-              <i class="clock icon"></i>
-            <span class="meta">20/12/2017</span>
-            </div>
-            <div class="right floated">
-              <i class="euro sign icon"></i>
-              <span>145,95</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 {% endblock %}
