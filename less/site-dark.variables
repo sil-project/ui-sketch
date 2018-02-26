@@ -14,7 +14,7 @@
 
 @pageBackground: #2B3E50;
 @textColor: #fff;
-@linkColor: #df691a;
+@linkColor: @primaryColor;
 @linkHoverColor: @linkColor;
 @emSize: 15px;
 @fontSize: 15px;
