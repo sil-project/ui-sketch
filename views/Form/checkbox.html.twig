@@ -1,19 +1,47 @@
-{% if field.form.class is not defined %}
-    {% set fieldClass = 'field' %}
-{% else %}
+{#
+    INPUT CLASS
+#}
+
+{% set fieldClass = 'field' %}
+{% if field.form.class is defined %}
     {% set fieldClass = 'field ' ~ field.form.class %}
 {% endif %}
 
-<div class="{{ fieldClass }}{% if field.form.inline == true %} inline{% endif %}{% if field.form.readonly %} readonly{% endif %}">
+{% if field.form.inline == true %}
+    {% set fieldClass = fieldClass ~ ' inline' %}
+{% endif %}
+
+{% if field.form.readonly %}
+    {% set fieldClass = fieldClass ~ ' readonly' %}
+{% endif %}
+
+{#
+    INPUT TABINDEX
+#}
+
+{% set tabindex = 1 %}
+{% if field.form.readonly %}
+    {% set tabindex = -1 %}
+{% endif %}
+
+{#
+    INPUT
+#}
+
+<div class="{{ fieldClass }}">
     <div class="ui toggle checkbox">
         <input
-            name="{{ field.name }}"
-            tabindex="0"
-            class="hidden"
             type="checkbox"
+            name="{{ field.name }}"
+            class="hidden"
+            tabindex="{{ tabindex }}"
             {% if field.value == true %}checked="checked"{% endif %}
             {% if field.form.disabled %}disabled="disabled"{% endif %}
         />
-        {% if field.label is defined and field.label is not null %}<label>{{ field.label }}</label>{% endif %}
+
+        {% if field.label is defined and field.label is not null %}
+            <label>{{ field.label }}</label>
+        {% endif %}
+
     </div>
 </div>

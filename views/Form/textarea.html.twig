@@ -1,10 +1,46 @@
-{% if field.form.class is not defined %}
-    {% set fieldClass = 'field' %}
-{% else %}
+{#
+    INPUT CLASS
+#}
+
+{% set fieldClass = 'field' %}
+{% if field.form.class is defined %}
     {% set fieldClass = 'field ' ~ field.form.class %}
 {% endif %}
 
-<div class="{{ fieldClass }}{% if field.form.inline == true %} inline{% endif %}{% if field.form.readonly %} readonly{% endif %}">
-    {% if field.label is defined and field.label is not null %}<label>{{ field.label }}</label>{% endif %}
-    <textarea name="{{ field.name }}" {% if field.form.disabled %} disabled="disabled"{% endif %}>{{ field.value }}</textarea>
-</div>
+{% if field.form.inline == true %}
+    {% set fieldClass = fieldClass ~ ' inline' %}
+{% endif %}
+
+{% if field.form.readonly %}
+    {% set fieldClass = fieldClass ~ ' readonly' %}
+{% endif %}
+
+{#
+    INPUT TABINDEX
+#}
+
+{% set tabindex = 1 %}
+{% if field.form.readonly %}
+    {% set tabindex = -1 %}
+{% endif %}
+
+{#
+    INPUT
+#}
+
+{% spaceless %}
+    <div class="{{ fieldClass }}">
+
+        {% if field.label is defined and field.label is not null %}
+            <label>{{ field.label }}</label>
+        {% endif %}
+
+        <textarea
+            name="{{ field.name }}"
+            tabindex="{{ tabindex }}"
+            {% if field.form.disabled %} disabled="disabled"{% endif %}
+        >
+            {{ field.value }}
+        </textarea>
+    </div>
+{% endspaceless %}

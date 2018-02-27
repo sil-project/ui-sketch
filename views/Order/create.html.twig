@@ -262,13 +262,13 @@
                                     </div>
 
                                     <div class="sixteen wide column">
-                                        <div class="ui header">
-                                            Adresses
-                                        </div>
 
                                         <div class="ui grid two columns">
                                             <div class="column">
-                                                Facturation
+                                                <div class="ui header">
+                                                    Adresse de facturation
+                                                </div>
+
                                                 <p>
 
                                                     {% include '@Template/Form/text.html.twig' with {
@@ -307,7 +307,9 @@
                                             </div>
 
                                             <div class="column">
-                                                Livraison
+                                                <div class="ui header">
+                                                    Adresse de livraison
+                                                </div>
                                                 <p>
                                                     {% include '@Template/Form/text.html.twig' with {
                                                         field : {
