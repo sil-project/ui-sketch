@@ -174,7 +174,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <a class="ui blue basic label">AWE-INC-0256</a>
+                                                <a class="ui blue label">AWE-INC-0256</a>
                                                 The awesome and incredible product 256
                                             </td>
                                             <td class="right aligned">256 €</td>
@@ -184,7 +184,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <a class="ui blue basic label">AWE-INC-1024</a>
+                                                <a class="ui blue label">AWE-INC-1024</a>
                                                 The awesome and incredible product 1024
                                             </td>
                                             <td class="right aligned">1024 €</td>
@@ -225,14 +225,189 @@
                             <div class="column">
                                 <h3 class="ui header">Récapitulatif</h3>
                                 <div class="ui divider"></div>
-                                <div class="ui center aligned basic segment">
-                                    <a class="ui positive icon button" href="/order">
-                                        Créer la commande
-                                        <i class="large icons">
-                                            <i class="tasks icon"></i>
-                                            <i class="bottom right corner add icon green"></i>
-                                        </i>
-                                    </a>
+                                <div class="ui stackable grid center aligned">
+                                    <div class="eight wide column">
+
+                                        <div class="ui header">
+                                            Source
+                                        </div>
+                                        {% include '@Template/Form/text.html.twig' with {
+                                            field : {
+                                                value: 'N/A',
+                                                form: {
+                                                    readonly: true,
+                                                    class: 'ui input fluid'
+                                                }
+                                            }
+                                        } %}
+
+                                    </div>
+                                    <div class="eight wide column">
+
+                                        <div class="ui header">
+                                            Compte client
+                                        </div>
+                                        {% include '@Template/Form/select.html.twig' with {
+                                            field : {
+                                                value: '<img class="ui mini avatar image" src="/img/li-logo.png">
+                                                <b>Libre-Informatique</b>
+                                                -
+                                                <i>contact@libre-informatique.fr</i>',
+                                                form: {
+                                                    readonly: true,
+                                                    class: 'ui input center aligned'
+                                                }
+                                            }
+                                        } %}
+                                    </div>
+
+                                    <div class="sixteen wide column">
+                                        <div class="ui header">
+                                            Adresses
+                                        </div>
+
+                                        <div class="ui grid two columns">
+                                            <div class="column">
+                                                Facturation
+                                                <p>
+
+                                                    {% include '@Template/Form/text.html.twig' with {
+                                                        field : {
+                                                            value: '7 Allée Jean Lagadic',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+
+                                                </p>
+                                                <p>
+                                                    {% include '@Template/Form/text.html.twig' with {
+                                                        field : {
+                                                            value: '29000',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+                                                </p>
+                                                <p>
+                                                    {% include '@Template/Form/text.html.twig' with {
+                                                        field : {
+                                                            value: 'QUIMPER',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+                                                </p>
+                                            </div>
+
+                                            <div class="column">
+                                                Livraison
+                                                <p>
+                                                    {% include '@Template/Form/text.html.twig' with {
+                                                        field : {
+                                                            value: '7 Allée Jean Lagadic',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+                                                </p>
+                                                <p>
+                                                    {% include '@Template/Form/text.html.twig' with {
+                                                        field : {
+                                                            value: '29000',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+                                                </p>
+                                                <p>
+                                                    {% include '@Template/Form/text.html.twig' with {
+                                                        field : {
+                                                            value: 'QUIMPER',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sixteen wide column">
+                                        <div class="ui header">
+                                            Produits
+                                        </div>
+
+                                        <table class="ui blue table show data">
+                                            <thead>
+                                                <tr>
+                                                    <th>Désignation</th>
+                                                    <th class="right aligned">Prix unitaire</th>
+                                                    <th class="right aligned">Quantité</th>
+                                                    <th class="right aligned">Total HT</th>
+                                                    <th class="right aligned">Total TTC</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a class="ui blue label">AWE-INC-0256</a>
+                                                        The awesome and incredible product 256
+                                                    </td>
+                                                    <td class="right aligned">256 €</td>
+                                                    <td class="right aligned">3</td>
+                                                    <td class="right aligned">768 €</td>
+                                                    <td class="right aligned">921.6 €</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a class="ui blue label">AWE-INC-1024</a>
+                                                        The awesome and incredible product 1024
+                                                    </td>
+                                                    <td class="right aligned">1024 €</td>
+                                                    <td class="right aligned">1</td>
+                                                    <td class="right aligned">1024 €</td>
+                                                    <td class="right aligned">1228.8 €</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="2"></th>
+                                                    <th class="right aligned">
+                                                        <b>4</b>
+                                                    </th>
+                                                    <th class="right aligned">
+                                                        <b>1792 €</b>
+                                                    </th>
+                                                    <th class="right aligned">
+                                                        <b>2150.4 €</b>
+                                                    </th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+
+                                    <div class="ui center aligned basic segment">
+                                        <a class="ui positive icon button" href="/order">
+                                            Créer la commande
+                                            <i class="large icons">
+                                                <i class="tasks icon"></i>
+                                                <i class="bottom right corner add icon green"></i>
+                                            </i>
+                                        </a>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

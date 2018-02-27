@@ -1,4 +1,10 @@
-<div class="field {% if field.form.inline == true %}inline{% endif %}">
-    <label>{{ field.label }}</label>
-    <input name="{{ field.name }}" placeholder="{{ field.label }}" value="{{ field.value }}" type="text"/>
+{% if field.form.class is not defined %}
+    {% set fieldClass = 'field' %}
+{% else %}
+    {% set fieldClass = 'field ' ~ field.form.class %}
+{% endif %}
+
+<div class="{{ fieldClass }}{% if field.form.inline == true %} inline{% endif %}{% if field.form.readonly %} readonly{% endif %}">
+    {% if field.label is defined and field.label is not null %}<label>{{ field.label }}</label>{% endif %}
+    <input name="{{ field.name }}" placeholder="{{ field.label }}" value="{{ field.value }}" type="text" {% if field.form.disabled %}disabled="disabled"{% endif %}/>
 </div>

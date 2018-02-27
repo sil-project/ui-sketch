@@ -1,8 +1,12 @@
-<div class="field {% if field.form.inline == true %}inline{% endif %}">
-    {% if field.label is not null %}
-        <label>{{ field.label }}</label>
-    {% endif %}
-    <div class="ui selection dropdown">
+{% if field.form.class is not defined %}
+    {% set fieldClass = 'field' %}
+{% else %}
+    {% set fieldClass = 'field ' ~ field.form.class %}
+{% endif %}
+
+<div class="{{ fieldClass }}{% if field.form.inline == true %} inline{% endif %}">
+    {% if field.label is defined and field.label is not null %}<label>{{ field.label }}</label>{% endif %}
+    <div class="ui selection dropdown{% if field.form.disabled %} disabled{% endif %}{% if field.form.readonly %} readonly{% endif %}">
         <input name="{{ field.name }}" type="hidden">
         <i class="dropdown icon"></i>
         <div class="default text">{{ field.value }}</div>

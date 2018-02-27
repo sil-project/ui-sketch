@@ -1,9 +1,23 @@
+{% if field.form.class is not defined %}
+    {% set fieldClass = 'field' %}
+{% else %}
+    {% set fieldClass = 'field ' ~ field.form.class %}
+{% endif %}
+
 <div class="grouped fields">
-    <label>{{ field.label }}</label>
+    {% if field.label is defined and field.label is not null %}<label>{{ field.label }}</label>{% endif %}
     {% for value in field.form.values %}
-        <div class="field {% if field.form.inline == true %}inline{% endif %}">
+        <div class="{{ fieldClass }}{% if field.form.inline == true %} inline{% endif %}{% if field.form.readonly %} readonly{% endif %}">
             <div class="ui toggle checkbox">
-                <input name="{{ field.name }}[]" tabindex="{{ loop.index0 }}" class="hidden" type="checkbox" value="{{ value }}" {% if field.value|split(',') == value %} checked="checked" {% endif %}>
+                <input
+                    name="{{ field.name }}[]"
+                    tabindex="{{ loop.index0 }}"
+                    class="hidden"
+                    type="checkbox"
+                    value="{{ value }}"
+                    {% if field.value|split(',') == value %} checked="checked" {% endif %}
+                    {% if field.form.disabled %}disabled="disabled"{% endif %}
+                />
                 <label>{{ value }}</label>
             </div>
         </div>

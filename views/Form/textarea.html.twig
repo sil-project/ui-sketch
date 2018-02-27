@@ -1,4 +1,10 @@
-<div class="field {% if field.form.inline == true %}inline{% endif %}">
-    <label>{{ field.label }}</label>
-    <textarea name="{{ field.name }}">{{ field.value }}</textarea>
+{% if field.form.class is not defined %}
+    {% set fieldClass = 'field' %}
+{% else %}
+    {% set fieldClass = 'field ' ~ field.form.class %}
+{% endif %}
+
+<div class="{{ fieldClass }}{% if field.form.inline == true %} inline{% endif %}{% if field.form.readonly %} readonly{% endif %}">
+    {% if field.label is defined and field.label is not null %}<label>{{ field.label }}</label>{% endif %}
+    <textarea name="{{ field.name }}" {% if field.form.disabled %} disabled="disabled"{% endif %}>{{ field.value }}</textarea>
 </div>
