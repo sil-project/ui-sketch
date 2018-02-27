@@ -1,9 +1,12 @@
-{% macro field_group(view, fields, editable) %}
+{% macro field_group(view, fields, editable, withSubmit) %}
+    {% if withSubmit is not defined %}
+      {% set withSubmit = true %}
+    {% endif %}
     {% import _self as common %}
     {% spaceless %}
         {{ common.display_show_group(view, fields) }}
         {% if editable == true %}
-            {{ common.display_form_group(view, fields, true) }}
+            {{ common.display_form_group(view, fields, withSubmit) }}
         {% endif %}
     {% endspaceless %}
 {% endmacro %}
