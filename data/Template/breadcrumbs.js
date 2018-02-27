@@ -1,5 +1,5 @@
 module.exports = [{
     label: 'Tableau de bord',
-    href: '#'
+    href: '/dashboard'
   }
 ];

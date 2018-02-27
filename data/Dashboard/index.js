@@ -2,7 +2,7 @@ module.exports = {
     breadcrumbs: [
         {
             label: 'Tableau de bord',
-            href: '/'
+            href: '/dashboard'
         }
     ],
     page: {
