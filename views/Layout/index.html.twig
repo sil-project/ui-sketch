@@ -17,7 +17,7 @@
         {% endblock %}
     </head>
 
-    <body class="pushable">
+    <body class="pushable {% spaceless %}{% block body_class %}{% endblock %}{% endspaceless %}">
 
         <!-- [SIDE BAR] -->
         {% include '@Template/Layout/side-bar.html.twig' %}
@@ -26,7 +26,7 @@
         {% include '@Template/Layout/top-bar.html.twig' %}
 
         <div class="pusher">
-            <div id="content" class="full hight">
+            <div id="content" class="full height">
                 <div class="ui stackable basic segment">
                     {% block content %}{% endblock %}
                 </div>

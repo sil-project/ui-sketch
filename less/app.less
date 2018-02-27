@@ -16,11 +16,9 @@
     src          : local('Raleway'), local('Raleway-Regular'), url("/fonts/Raleway.woff2") format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
 /**
  * Picked from https://gist.github.com/bl4ck5un/ed27db3d653011b32ee0877058abac7d
  */
-
 /* Mobile */
 @media only screen and (max-width: 767px) {
     [class*="computer only"]:not(.mobile),
@@ -32,7 +30,6 @@
         display: none !important;
     }
 }
-
 /* Tablet / iPad Portrait */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     [class*="large screen only"]:not(.tablet),
@@ -44,7 +41,6 @@
         display: none !important;
     }
 }
-
 /* Computer / Desktop / iPad Landscape */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     [class*="computer hidden"],
@@ -56,7 +52,6 @@
         display: none !important;
     }
 }
-
 /* Large Monitor */
 @media only screen and (min-width: 1200px) and (max-width: 1919px) {
     [class*="mobile only"]:not([class*="large screen"]),
@@ -68,7 +63,6 @@
         display: none !important;
     }
 }
-
 /* Widescreen Monitor */
 @media only screen and (min-width: 1920px) {
     [class*="mobile only"]:not([class*="widescreen"]),
@@ -80,7 +74,6 @@
         display: none !important;
     }
 }
-
 
 body {
     font-family: 'Raleway','Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -106,9 +99,28 @@ body {
                         display    : inline;
                         position   : absolute;
                         margin-left: 0.5em;
-                        opacity:0.15;
+                        opacity    : 0.15;
                     }
                 }
+            }
+        }
+    }
+
+    &.login {
+        background-color: @primaryColor;
+
+        .column {
+            max-width: 450px;
+        }
+
+        & > .grid {
+            height    : 100%;
+            min-height: 100%;
+        }
+
+        .ui.primary.image.header {
+            .content {
+                color: @white;
             }
         }
     }
@@ -363,6 +375,7 @@ body.pushable .pusher {
     }
 }
 
-.ui.secondary.pointing.menu .active.item, .ui.secondary.pointing.menu .active.item:hover {
-  border-color: @blue;
+.ui.secondary.pointing.menu .active.item,
+.ui.secondary.pointing.menu .active.item:hover {
+    border-color: @blue;
 }

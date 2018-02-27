@@ -13,8 +13,8 @@ body {
 
         .ui.breadcrumb {
             margin-left: 0.5em;
-            background: transparent;
-            padding: 0;
+            background : transparent;
+            padding    : 0;
 
             a.section {
                 line-height: 2.85rem;
@@ -31,11 +31,15 @@ body {
                         display    : inline;
                         position   : absolute;
                         margin-left: 0.5em;
-                        opacity:0.3;
+                        opacity    : 0.3;
                     }
                 }
             }
         }
+    }
+
+    &.login {
+        background-color: @pageBackground;
     }
 }
 
@@ -54,7 +58,7 @@ body.pushable .pusher {
                 background: @pageBackground;
                 font-size : 0.85rem;
                 padding   : 1em 1.32222222em;
-                color: @white;
+                color     : @white;
 
                 & > i.icon {
                     color: @white;
