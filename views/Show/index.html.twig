@@ -1,4 +1,4 @@
-{% extends "@Template/Layout/index.html.twig" %}
+{% extends "@Template/Layout/layout.html.twig" %}
 
 {% block content %}
 
@@ -13,15 +13,20 @@
                     </div>
                 </h1>
             </div>
+
             {% block page_actions %}
-                <div class="four wide column">
-                    {% block page_actions_content %}{% endblock %}
-                </div>
+
+            <div class="four wide column">
+                {% block page_actions_content %}{% endblock %}
+            </div>
+
             {% endblock %}
 
-        {% endblock %}
-    </div>
+        </div>
+    {% endblock %}
+
     <div class="ui divider"></div>
+
     {% block page_content %}{% endblock %}
 
 {% endblock %}

@@ -1,37 +1,12 @@
+/**
+ * Display toggleable forms into show views.
+ */
+
 $(document).ready(function() {
-
-    $('.ui.accordion:not(.exclusive)').accordion({exclusive: false, duration: 200});
-    $('.ui.accordion.exclusive').accordion({exclusive: true, duration: 200});
-    $('.tabular.menu .item').tab({history: true, historyType: 'hash'});
-    $('.ui.dropdown').dropdown();
-    $('.ui.checkbox').checkbox();
-
-    $('#sidebar').addClass('visible');
-    $('#sidebar').sidebar('attach events', '#sidebar-toggle', 'toggle');
-    $('#sidebar').sidebar('setting', {
-        dimPage: false,
-        closable: false
-    });
-
-    $('[data-requires-confirm]').modalConfirmation();
-
-    $('[data-content]').popup({inline: true});
-
     $('.ui.with.form').toggleableForm();
 
     $('.ui.with.form form .submit').on('click', function() {
         $(this).closest('form').removeClass('transition').addClass('loading');
-    });
-
-    $('[data-modal]:not(.ui.modal)').on('click', function() {
-        var btn = $(this);
-        var modal = $('.ui.modal[data-modal="' + btn.attr('data-modal') + '"]');
-
-        modal.modal('setting', 'transition', 'pulse').modal('show');
-    });
-
-    $('.ui.calendar').each(function(i, item) {
-        $(item).calendar({type: $(item).attr('data-type')});
     });
 });
 
