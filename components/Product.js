@@ -4,20 +4,20 @@ module.exports = {
 
     app.route('/product')
       .get(function(req, res) {
-        res.render('Product/index.html.twig', require_data('Product/index'));
+        res.render('_Component/Product/index.html.twig', require_data('Product/index'));
       })
       .post(function(req, res) {
-        res.render('Product/index.html.twig', require_data('Product/index'));
+        res.render('_Component/Product/index.html.twig', require_data('Product/index'));
       });
 
 
     app.get('/product/create', function(req, res) {
-      res.render('Product/create.html.twig', require_data('Product/index'));
+      res.render('_Component/Product/create.html.twig', require_data('Product/index'));
     });
 
     app.route('/product/list')
       .get(function(req, res) {
-        res.render('Product/list.html.twig', require_data('Product/list'));
+        res.render('_Component/Product/list.html.twig', require_data('Product/list'));
       })
   }
 

@@ -1,0 +1,47 @@
+{% extends "@Template/_View/Show/show.html.twig" %}
+{% import "@Template/_Layout/Macro/_common.html.twig" as macros %}
+
+{% block page_actions_content %}
+    <div class="ui right floated">
+        <div class="ui labeled icon top left dropdown button primary">
+            <i class="cogs icon"></i>
+            <span class="text">Actions</span>
+            <div class="menu">
+                <a class="item" href="/product/create">
+                    <i class="plus circle icon"></i>
+                    Nouveau produit
+                </a>
+                <a class="item" href="/product">
+                    <i class="archive icon"></i>
+                    Archiver
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_content %}
+    <div class="ui stackable grid">
+
+        <div class="twelve wide column">
+
+            {% include "@Template/_Component/Product/Tabs/tabs.html.twig" %}
+
+            {% include "@Template/_Component/Product/Tabs/general.html.twig" %}
+
+            {% include "@Template/_Component/Product/Tabs/variants.html.twig" %}
+
+        </div>
+
+        <div class="four wide column right aligned">
+
+            {% include "@Template/_Component/Product/Cards/price.html.twig" %}
+
+            {% include "@Template/_Component/Product/Cards/channels.html.twig" %}
+
+            {% include "@Template/_Component/Product/Cards/history.html.twig" %}
+
+        </div>
+
+    </div>
+{% endblock %}

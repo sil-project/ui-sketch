@@ -1,0 +1,123 @@
+<div class="ui column stackable stretched grid">
+    <div class="sixteen wide column">
+        <div class="ui clearing segment with form">
+            <h4 class="ui header">Liste des produits</h4>
+            <div class="ui divider"></div>
+            <table class="ui blue table show data">
+                <thead>
+                    <tr>
+                        <th>Désignation</th>
+                        <th class="right aligned">Prix unitaire</th>
+                        <th class="right aligned">Quantité</th>
+                        <th class="right aligned">Total HT</th>
+                        <th class="right aligned">Total TTC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a class="ui blue label">AWE-INC-0256</a>
+                            The awesome and incredible product 256
+                        </td>
+                        <td class="right aligned">256 €</td>
+                        <td class="right aligned">3</td>
+                        <td class="right aligned">768 €</td>
+                        <td class="right aligned">921.6 €</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="ui blue label">AWE-INC-1024</a>
+                            The awesome and incredible product 1024
+                        </td>
+                        <td class="right aligned">1024 €</td>
+                        <td class="right aligned">1</td>
+                        <td class="right aligned">1024 €</td>
+                        <td class="right aligned">1228.8 €</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="2"></th>
+                        <th class="right aligned">
+                            <b>4</b>
+                        </th>
+                        <th class="right aligned">
+                            <b>1792 €</b>
+                        </th>
+                        <th class="right aligned">
+                            <b>2150.4 €</b>
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <form class="ui form data" method="POST" action="">
+                <table class="ui blue table data">
+                    <thead>
+                        <tr>
+                            <th>Désignation</th>
+                            <th class="right aligned">Prix unitaire</th>
+                            <th class="right aligned">Quantité</th>
+                            <th class="right aligned">Total HT</th>
+                            <th class="right aligned">Total TTC</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a class="ui blue label">AWE-INC-0256</a>
+                                The awesome and incredible product 256
+                            </td>
+                            <td class="right aligned">256 €</td>
+                            <td class="right aligned">3</td>
+                            <td class="right aligned">768 €</td>
+                            <td class="right aligned">921.6 €</td>
+                            <td>
+                                <button class="ui icon red button">
+                                    <i class="trash icon"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="ui blue label">AWE-INC-1024</a>
+                                The awesome and incredible product 1024
+                            </td>
+                            <td class="right aligned">1024 €</td>
+                            <td class="right aligned">1</td>
+                            <td class="right aligned">1024 €</td>
+                            <td class="right aligned">1228.8 €</td>
+                            <td class="collapsing">
+                                <button class="ui icon red button">
+                                    <i class="trash icon"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th class="right aligned">
+                                <b>4</b>
+                            </th>
+                            <th class="right aligned">
+                                <b>1792 €</b>
+                            </th>
+                            <th class="right aligned">
+                                <b>2150.4 €</b>
+                            </th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <a class="ui button labeled icon green right floated" data-modal="productSelector">
+                    <i class="plus circle icon"></i>
+                    Ajouter un produit
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@Template/_Component/Order/Modal/productSelector.html.twig' %}

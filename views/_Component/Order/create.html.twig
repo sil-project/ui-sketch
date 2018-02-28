@@ -1,0 +1,433 @@
+{% extends "@Template/_View/Show/show.html.twig" %}
+{% import "@Template/_Layout/Macro/_common.html.twig" as macros %}
+
+{% block page_header %}
+
+    <h1 class="ui center aligned header">
+        <div class="ui stackable five steps">
+            <div class="active step" data-name="general">
+                <i class="tasks icon"></i>
+                <div class="content">
+                    <div class="title">Général</div>
+                    <div class="description">Informations générales</div>
+                </div>
+            </div>
+            <div class="step" data-name="account">
+                <i class="user circle icon"></i>
+                <div class="content">
+                    <div class="title">Compte</div>
+                    <div class="description">Choisir le compte client concerné</div>
+                </div>
+            </div>
+            <div class="step" data-name="addresses">
+                <i class="envelope open outline icon"></i>
+                <div class="content">
+                    <div class="title">Adresses</div>
+                    <div class="description">Attribuer les adresses</div>
+                </div>
+            </div>
+            <div class="step" data-name="products">
+                <i class="cubes icon"></i>
+                <div class="content">
+                    <div class="title">Produits</div>
+                    <div class="description">Assigner des produits</div>
+                </div>
+            </div>
+            <div class="step" data-name="resume">
+                <i class="info circle icon"></i>
+                <div class="content">
+                    <div class="title">Récapitulatif</div>
+                    <div class="description">Vérifier les informations</div>
+                </div>
+            </div>
+        </div>
+    </h1>
+
+{% endblock %}
+
+{% block page_content %}
+
+    <div class="ui stackable padded grid">
+
+        <div class="sixteen wide column">
+
+            {% include '@Template/_Component/Order/Step/nav.html.twig' %}
+
+            <div class="ui segment">
+                <div class="step content">
+                    <div class="step active" data-step="general">
+                        <div class="ui equal width grid center aligned">
+                            <div class="column left aligned">
+                                <h3 class="ui header">Informations générales</h3>
+                                <div class="ui divider"></div>
+                                {{ macros.display_form_group(create, ['source']) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step" data-step="account">
+                        <div class="ui stackable grid center aligned">
+                            <div class="seven wide column left aligned">
+                                <h3 class="ui header">Rechercher un compte</h3>
+                                <div class="ui divider"></div>
+                                <div class="ui fluid">
+                                    <div class="ui floating dropdown labeled search icon blue button">
+                                        <i class="folder open icon"></i>
+                                        <input name="country" type="hidden">
+                                        <div class="default text">Rechercher un compte existant</div>
+                                        <div class="menu">
+                                            <div class="item" data-value="jenny">
+                                                <img class="ui mini avatar image" src="/img/jenny.jpg">
+                                                <b>Jenny Hess</b>
+                                                -
+                                                <i>jenny.hess@example.eu</i>
+                                            </div>
+                                            <div class="item" data-value="elliot">
+                                                <img class="ui mini avatar image" src="/img/elliot.jpg">
+                                                <b>Elliot Fu</b>
+                                                -
+                                                <i>elliot.fu@example.eu</i>
+                                            </div>
+                                            <div class="item" data-value="stevie">
+                                                <img class="ui mini avatar image" src="/img/stevie.jpg">
+                                                <b>Stevie Feliciano</b>
+                                                -
+                                                <i>stevie.feliciano@example.eu</i>
+                                            </div>
+                                            <div class="item" data-value="christian">
+                                                <img class="ui mini avatar image" src="/img/christian.jpg">
+                                                <b>Christian</b>
+                                                -
+                                                <i>christian@example.eu</i>
+                                            </div>
+                                            <div class="item" data-value="matt">
+                                                <img class="ui mini avatar image" src="/img/matt.jpg">
+                                                <b>Matt</b>
+                                                -
+                                                <i>matt@example.eu</i>
+                                            </div>
+                                            <div class="item" data-value="justen">
+                                                <img class="ui mini avatar image" src="/img/justen.jpg">
+                                                <b>Justen Kitsune</b>
+                                                -
+                                                <i>justen.kitsune@example.eu</i>
+                                            </div>
+                                            <div class="item" data-value="justen">
+                                                <img class="ui mini avatar image" src="/img/li-logo.png">
+                                                <b>Libre-Informatique</b>
+                                                -
+                                                <i>contact@libre-informatique.fr</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui green button right floated" onclick="$('.ui.button.next.step').trigger('click');">
+                                        Choisir
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column center aligned">
+                                <div class="ui vertical divider">
+                                    ou
+                                </div>
+                            </div>
+                            <div class="seven wide column left aligned">
+                                <h3 class="ui header">Nouveau du compte</h3>
+                                <div class="ui divider"></div>
+                                {{ macros.display_form_group(create, ['account_firstname', 'account_lastname', 'account_email']) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step" data-step="addresses">
+                        <div class="ui stackable grid center aligned">
+                            <div class="seven wide column left aligned">
+                                <h3 class="ui header">Adresse de facturation</h3>
+                                <div class="ui divider"></div>
+                                {{ macros.display_form_group(create, ['invoiceAddress_street','invoiceAddress_postCode', 'invoiceAddress_city']) }}
+                            </div>
+                            <div class="column center aligned">
+                                <div class="ui vertical divider">
+                                    et
+                                </div>
+                            </div>
+                            <div class="seven wide column left aligned">
+                                <h3 class="ui header">Adresse de livraison</h3>
+                                <div class="ui divider"></div>
+                                {{ macros.display_form_group(create, ['deliveryAddress_street','deliveryAddress_postCode', 'deliveryAddress_city']) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step" data-step="products">
+
+                        <div class="ui equal width grid">
+                            <div class="column">
+                                <h3 class="ui header">Selection de produits</h3>
+                                <div class="ui divider"></div>
+                                <table class="ui blue table show data">
+                                    <thead>
+                                        <tr>
+                                            <th>Désignation</th>
+                                            <th class="right aligned">Prix unitaire</th>
+                                            <th class="right aligned">Quantité</th>
+                                            <th class="right aligned">Total HT</th>
+                                            <th class="right aligned">Total TTC</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a class="ui blue label">AWE-INC-0256</a>
+                                                The awesome and incredible product 256
+                                            </td>
+                                            <td class="right aligned">256 €</td>
+                                            <td class="right aligned">3</td>
+                                            <td class="right aligned">768 €</td>
+                                            <td class="right aligned">921.6 €</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a class="ui blue label">AWE-INC-1024</a>
+                                                The awesome and incredible product 1024
+                                            </td>
+                                            <td class="right aligned">1024 €</td>
+                                            <td class="right aligned">1</td>
+                                            <td class="right aligned">1024 €</td>
+                                            <td class="right aligned">1228.8 €</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="2"></th>
+                                            <th class="right aligned">
+                                                <b>4</b>
+                                            </th>
+                                            <th class="right aligned">
+                                                <b>1792 €</b>
+                                            </th>
+                                            <th class="right aligned">
+                                                <b>2150.4 €</b>
+                                            </th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <a class="ui button labeled icon green right floated" data-modal="productSelector">
+                                    <i class="plus circle icon"></i>
+                                    Ajouter un produit
+                                </a>
+
+                                {% include '@Template/_Component/Order/Modal/productSelector.html.twig' %}
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="resume">
+
+                        <div class="ui equal width grid">
+                            <div class="column">
+                                <h3 class="ui header">Récapitulatif</h3>
+                                <div class="ui divider"></div>
+                                <div class="ui stackable grid center aligned">
+                                    <div class="eight wide column">
+
+                                        <div class="ui header">
+                                            Source
+                                        </div>
+                                        {% include '@Template/_View/Form/Type/text.html.twig' with {
+                                            field : {
+                                                value: 'N/A',
+                                                form: {
+                                                    readonly: true,
+                                                    class: 'ui input fluid'
+                                                }
+                                            }
+                                        } %}
+
+                                    </div>
+                                    <div class="eight wide column">
+
+                                        <div class="ui header">
+                                            Compte client
+                                        </div>
+                                        {% include '@Template/_View/Form/Type/select.html.twig' with {
+                                            field : {
+                                                value: '<img class="ui mini avatar image" src="/img/li-logo.png">
+                                                <b>Libre-Informatique</b>
+                                                -
+                                                <i>contact@libre-informatique.fr</i>',
+                                                form: {
+                                                    readonly: true,
+                                                    class: 'ui input center aligned'
+                                                }
+                                            }
+                                        } %}
+                                    </div>
+
+                                    <div class="sixteen wide column">
+
+                                        <div class="ui grid two columns">
+                                            <div class="column">
+                                                <div class="ui header">
+                                                    Adresse de facturation
+                                                </div>
+
+                                                <p>
+
+                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
+                                                        field : {
+                                                            value: '7 Allée Jean Lagadic',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+
+                                                </p>
+                                                <p>
+                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
+                                                        field : {
+                                                            value: '29000',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+                                                </p>
+                                                <p>
+                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
+                                                        field : {
+                                                            value: 'QUIMPER',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+                                                </p>
+                                            </div>
+
+                                            <div class="column">
+                                                <div class="ui header">
+                                                    Adresse de livraison
+                                                </div>
+                                                <p>
+                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
+                                                        field : {
+                                                            value: '7 Allée Jean Lagadic',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+                                                </p>
+                                                <p>
+                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
+                                                        field : {
+                                                            value: '29000',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+                                                </p>
+                                                <p>
+                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
+                                                        field : {
+                                                            value: 'QUIMPER',
+                                                            form: {
+                                                                readonly: true,
+                                                                class: 'ui input fluid'
+                                                            }
+                                                        }
+                                                    } %}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sixteen wide column">
+                                        <div class="ui header">
+                                            Produits
+                                        </div>
+
+                                        <table class="ui blue table show data">
+                                            <thead>
+                                                <tr>
+                                                    <th>Désignation</th>
+                                                    <th class="right aligned">Prix unitaire</th>
+                                                    <th class="right aligned">Quantité</th>
+                                                    <th class="right aligned">Total HT</th>
+                                                    <th class="right aligned">Total TTC</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a class="ui blue label">AWE-INC-0256</a>
+                                                        The awesome and incredible product 256
+                                                    </td>
+                                                    <td class="right aligned">256 €</td>
+                                                    <td class="right aligned">3</td>
+                                                    <td class="right aligned">768 €</td>
+                                                    <td class="right aligned">921.6 €</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a class="ui blue label">AWE-INC-1024</a>
+                                                        The awesome and incredible product 1024
+                                                    </td>
+                                                    <td class="right aligned">1024 €</td>
+                                                    <td class="right aligned">1</td>
+                                                    <td class="right aligned">1024 €</td>
+                                                    <td class="right aligned">1228.8 €</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="2"></th>
+                                                    <th class="right aligned">
+                                                        <b>4</b>
+                                                    </th>
+                                                    <th class="right aligned">
+                                                        <b>1792 €</b>
+                                                    </th>
+                                                    <th class="right aligned">
+                                                        <b>2150.4 €</b>
+                                                    </th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+
+                                    <div class="ui center aligned basic segment">
+                                        <a class="ui positive icon button" href="/order">
+                                            Créer la commande
+                                            <i class="large icons">
+                                                <i class="tasks icon"></i>
+                                                <i class="bottom right corner add icon green"></i>
+                                            </i>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {% include '@Template/_Component/Order/Step/nav.html.twig' %}
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript" src="/js/steps.js"></script>
+{% endblock %}

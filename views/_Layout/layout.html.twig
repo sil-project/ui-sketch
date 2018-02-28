@@ -1,0 +1,90 @@
+{% extends '@Template/_Layout/empty_layout.html.twig' %}
+
+{# #################################################################################### #}
+{#     STYLESHEETS                                                                      #}
+{# #################################################################################### #}
+
+{% block stylesheets %}
+    {{  parent() }}
+
+    {# ################################################################################ #}
+    {#     DEPENDENCIES                                                                 #}
+    {# ################################################################################ #}
+
+    <link rel="stylesheet" href="/dep/semantic-ui-calendar/dist/calendar.min.css"/>
+{% endblock %}
+
+{% block body_class %}pushable{% endblock body_class %}
+
+{% block body %}
+
+    {# ################################################################################ #}
+    {#     SIDE BAR                                                                     #}
+    {# ################################################################################ #}
+
+    {% use '@Template/_Layout/Blocks/side-bar.html.twig' %}
+
+    {{ block('side_bar') }}
+
+    {# ################################################################################ #}
+    {#     TOP BAR                                                                      #}
+    {# ################################################################################ #}
+
+    {% use '@Template/_Layout/Blocks/top-bar.html.twig' %}
+
+    {{ block('top_bar') }}
+
+    {# ################################################################################ #}
+    {#     PAGE PUSHER                                                                  #}
+    {# ################################################################################ #}
+
+    <div class="pusher">
+        <div id="content" class="full height">
+            <div class="ui stackable very basic segment">
+
+                {# #################################################################### #}
+                {#     PAGE CONTENT                                                     #}
+                {# #################################################################### #}
+
+                {% block content %}{% endblock %}
+
+            </div>
+        </div>
+    </div>
+
+    {# ################################################################################ #}
+    {#     MODALS                                                                       #}
+    {# ################################################################################ #}
+
+    {% block modals %}
+        {% include '@Template/_View/Widget/Modal/_confirmation.html.twig' %}
+    {% endblock %}
+
+{% endblock body %}
+
+{# #################################################################################### #}
+{#     JAVASCRIPTS                                                                      #}
+{# #################################################################################### #}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {# ################################################################################ #}
+    {#     DEPENDENCIES                                                                 #}
+    {# ################################################################################ #}
+
+    <script src="/dep/jquery-address/src/jquery.address.js"></script>
+    <script src="/dep/semantic-ui-calendar/dist/calendar.min.js"></script>
+
+    {# ################################################################################ #}
+    {#     CUSTOM FEATURES                                                              #}
+    {# ################################################################################ #}
+
+    <script src="/js/features/accordions.js"></script>
+    <script src="/js/features/forms.js"></script>
+    <script src="/js/features/modal-confirmation.js"></script>
+    <script src="/js/features/modals.js"></script>
+    <script src="/js/features/sidebar.js"></script>
+    <script src="/js/features/tabs.js"></script>
+    <script src="/js/features/toggleable_forms.js"></script>
+{% endblock %}

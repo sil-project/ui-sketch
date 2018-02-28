@@ -1,0 +1,33 @@
+<div class="three fields">
+
+    {% include '@Template/_View/Form/Type/text.html.twig' with {
+        'field' : {
+            'name': 'name',
+            'label': 'Nom',
+            'value': attr.name
+        }
+    } %}
+
+    {% include '@Template/_View/Form/Type/text.html.twig' with {
+        'field' : {
+            'name': 'value',
+            'label': 'Valeur',
+            'value': attr.value
+        }
+    } %}
+
+    {% if attr.unit is not null %}
+
+        {% include '@Template/_View/Form/Type/select.html.twig' with {
+            'field' : {
+                'name': 'unit',
+                'label': 'Unité',
+                'value': attr.unit,
+                'form': {
+                    'values': attr.units
+                }
+            }
+        } %}
+
+    {% endif %}
+</div>

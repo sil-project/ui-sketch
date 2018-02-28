@@ -4,7 +4,7 @@ module.exports = {
 
     app.route('/dashboard')
       .get(function(req, res) {
-        res.render('Dashboard/index.html.twig', require_data('Dashboard/index'));
+        res.render('_Component/Dashboard/index.html.twig', require_data('Dashboard/index'));
       });
   }
 

@@ -4,7 +4,7 @@ module.exports = {
 
     app.route('/')
       .get(function(req, res) {
-        res.render('Login/index.html.twig', require_data('Login/index'));
+        res.render('_Component/Login/index.html.twig', require_data('Login/index'));
       });
 
     app.route('/login')

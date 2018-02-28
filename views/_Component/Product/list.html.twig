@@ -1,0 +1,36 @@
+{% extends "@Template/_View/Show/show.html.twig" %}
+{% import "@Template/_Layout/Macro/_common.html.twig" as macros %}
+
+{% block page_header %}
+    <div class="ui basic right floated">
+        <div class="ui labeled icon top left dropdown button primary">
+            <i class="cogs icon"></i>
+            <span class="text">Actions</span>
+            <div class="menu">
+                <a class="item" href="/product/create">
+                    <i class="plus circle icon"></i>
+                    Nouveau produit
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {{ parent() }}
+{% endblock %}
+
+{% block page_content %}
+    <div class="ui stackable grid">
+
+        <div class="sixteen wide column">
+
+            {% include '@Template/_View/List/index.html.twig' %}
+
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/js/list.js"></script>
+{% endblock %}
