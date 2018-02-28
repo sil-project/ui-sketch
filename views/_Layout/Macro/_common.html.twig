@@ -92,7 +92,15 @@
 
                 <div class="ui divider"></div>
 
-                {% include '@Template/_View/Form/Type/submit.html.twig' %}
+                {% include '@Template/_View/Form/Type/submit.html.twig' with {
+                    field : {
+                        label: 'Enregistrer',
+                        form: {
+                            class: 'right floated',
+                            icon: 'save'
+                        }
+                    }
+                } %}
 
                 <a class="ui button labeled icon left floated close">
                     <i class="undo icon"></i>
