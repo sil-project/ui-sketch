@@ -1,45 +1,16 @@
 {% extends "@Template/_View/Show/show.html.twig" %}
-{% import "@Template/_Layout/Macro/_common.html.twig" as macros %}
 
 {% block page_header %}
 
     <h1 class="ui center aligned header">
         <div class="ui stackable five steps">
-            <div class="active step" data-name="general">
-                <i class="tasks icon"></i>
-                <div class="content">
-                    <div class="title">Général</div>
-                    <div class="description">Informations générales</div>
-                </div>
-            </div>
-            <div class="step" data-name="account">
-                <i class="user circle icon"></i>
-                <div class="content">
-                    <div class="title">Compte</div>
-                    <div class="description">Choisir le compte client concerné</div>
-                </div>
-            </div>
-            <div class="step" data-name="addresses">
-                <i class="envelope open outline icon"></i>
-                <div class="content">
-                    <div class="title">Adresses</div>
-                    <div class="description">Attribuer les adresses</div>
-                </div>
-            </div>
-            <div class="step" data-name="products">
-                <i class="cubes icon"></i>
-                <div class="content">
-                    <div class="title">Produits</div>
-                    <div class="description">Assigner des produits</div>
-                </div>
-            </div>
-            <div class="step" data-name="resume">
-                <i class="info circle icon"></i>
-                <div class="content">
-                    <div class="title">Récapitulatif</div>
-                    <div class="description">Vérifier les informations</div>
-                </div>
-            </div>
+
+            {{ widget.step_header('general', 'Général', 'Informations générales', 'tasks', true) }}
+            {{ widget.step_header('account', 'Compte', 'Choisir le compte client concerné', 'user circle') }}
+            {{ widget.step_header('addresses', 'Adresses', 'Attribuer les adresses', 'envelope open outline') }}
+            {{ widget.step_header('products', 'Produits', 'Assigner des produits', 'cubes') }}
+            {{ widget.step_header('resume', 'Récapitulatif', 'Vérifier les informations', 'info circle') }}
+
         </div>
     </h1>
 
@@ -51,7 +22,7 @@
 
         <div class="sixteen wide column">
 
-            {% include '@Template/_Component/Order/Step/nav.html.twig' %}
+            {{ widget.step_nav() }}
 
             <div class="ui segment">
                 <div class="step content">
@@ -60,7 +31,7 @@
                             <div class="column left aligned">
                                 <h3 class="ui header">Informations générales</h3>
                                 <div class="ui divider"></div>
-                                {{ macros.display_form_group(create, ['source']) }}
+                                {{ widget.display_form_group(create, ['source']) }}
                             </div>
                         </div>
                     </div>
@@ -132,7 +103,7 @@
                             <div class="seven wide column left aligned">
                                 <h3 class="ui header">Nouveau du compte</h3>
                                 <div class="ui divider"></div>
-                                {{ macros.display_form_group(create, ['account_firstname', 'account_lastname', 'account_email']) }}
+                                {{ widget.display_form_group(create, ['account_firstname', 'account_lastname', 'account_email']) }}
                             </div>
                         </div>
                     </div>
@@ -141,7 +112,7 @@
                             <div class="seven wide column left aligned">
                                 <h3 class="ui header">Adresse de facturation</h3>
                                 <div class="ui divider"></div>
-                                {{ macros.display_form_group(create, ['invoiceAddress_street','invoiceAddress_postCode', 'invoiceAddress_city']) }}
+                                {{ widget.display_form_group(create, ['invoiceAddress_street','invoiceAddress_postCode', 'invoiceAddress_city']) }}
                             </div>
                             <div class="column center aligned">
                                 <div class="ui vertical divider">
@@ -151,7 +122,7 @@
                             <div class="seven wide column left aligned">
                                 <h3 class="ui header">Adresse de livraison</h3>
                                 <div class="ui divider"></div>
-                                {{ macros.display_form_group(create, ['deliveryAddress_street','deliveryAddress_postCode', 'deliveryAddress_city']) }}
+                                {{ widget.display_form_group(create, ['deliveryAddress_street','deliveryAddress_postCode', 'deliveryAddress_city']) }}
                             </div>
                         </div>
                     </div>
@@ -418,7 +389,7 @@
                 </div>
             </div>
 
-            {% include '@Template/_Component/Order/Step/nav.html.twig' %}
+            {{ widget.step_nav() }}
 
         </div>
 

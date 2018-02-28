@@ -1,0 +1,31 @@
+{# ##################################################################################### #}
+{#                                                                                       #}
+{#     MACRO card                                                                        #}
+{#                                                                                       #}
+{#     Displays a card with show field group (and form group if editable)                #}
+{#                                                                                       #}
+{# ##################################################################################### #}
+
+{% macro card(_title, _data, _fields, _editable, _withSubmit) %}
+
+    {# Set default options #}
+
+    {% if _editable is not defined %}
+        {% set _editable = false %}
+    {% endif %}
+
+    {% if _withSubmit is not defined %}
+        {% set _withSubmit = true %}
+    {% endif %}
+
+    {# Include the widget view #}
+
+    {% include '@Template/_View/Widget/DataCard/card.html.twig' with {
+        title : _title,
+        data: _data,
+        fields: _fields,
+        editable: _editable,
+        withSubmit: _withSubmit
+    } %}
+
+{% endmacro %}

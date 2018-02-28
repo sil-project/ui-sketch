@@ -1,5 +1,5 @@
 {% extends "@Template/_View/Show/show.html.twig" %}
-{% import "@Template/_Layout/Macro/_common.html.twig" as macros %}
+
 
 {% block stylesheets %}
     {{parent()}}
@@ -45,7 +45,7 @@
       </h1>
     </div>
   {% endblock %}
-  {% include '@Template/_Component/Product/Step/nav.html.twig' %}
+  {% include '@Template/_View/Widget/Step/nav.html.twig' %}
   <div class="step content">
     <div class="step active" data-step="general">
       <div class="ui two stackable cards">
@@ -55,7 +55,7 @@
               <span>Seller info</span>
             </div>
             <div class="ui divider"></div>
-            {{ macros.field_group(view, ['company_name', 'siret', 'address', 'vat_number'], true, false) }}
+            {{ widget.field_group(view, ['company_name', 'siret', 'address', 'vat_number'], true, false) }}
           </div>
           <div class="content"></div>
         </div>
@@ -65,7 +65,7 @@
               <span>Customer info</span>
             </div>
             <div class="ui divider"></div>
-            {{ macros.display_form_group(view, ['customer_firstname', 'customer_lastname', 'address', 'vat_number'], false) }}
+            {{ widget.display_form_group(view, ['customer_firstname', 'customer_lastname', 'address', 'vat_number'], false) }}
           </div>
           <div class="content"></div>
         </div>
@@ -76,7 +76,7 @@
             <span>Payment terms</span>
           </div>
           <div class="ui divider"></div>
-          {{ macros.display_form_group(view, ['currency', 'tax_rate', 'due_date', 'payment_terms'], false) }}
+          {{ widget.display_form_group(view, ['currency', 'tax_rate', 'due_date', 'payment_terms'], false) }}
         </div>
         <div class="content"></div>
       </div>
@@ -317,7 +317,7 @@
           </div>
       </div>
   </div>
-  {% include '@Template/_Component/Product/Step/nav.html.twig' %}
+  {% include '@Template/_View/Widget/Step/nav.html.twig' %}
 {% endblock %}
 
 {% block javascripts %}

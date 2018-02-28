@@ -1,5 +1,4 @@
 {% extends "@Template/_View/Show/show.html.twig" %}
-{% import "@Template/_Layout/Macro/_common.html.twig" as macros %}
 
 {% block stylesheets %}
     {{parent()}}
@@ -64,7 +63,7 @@
                 <div class="ui header">
                   <span>Romain Sanchez</span>
                 </div>
-                {{ macros.display_form_group(view, ['name'], true) }}
+                {{ widget.display_form_group(view, ['name'], true) }}
               </div>
               <div class="content">
                 <div class="ui right floated">
@@ -93,7 +92,7 @@
                 <div class="ui header">
                   <span>Romain Sanchez</span>
                 </div>
-                {{ macros.display_form_group(view, ['name'], true) }}
+                {{ widget.display_form_group(view, ['name'], true) }}
               </div>
               <div class="content">
                 <div class="ui right floated label make-default">Par défaut</div>
@@ -120,7 +119,7 @@
                 <div class="ui header">
                   <span>Romain Sanchez</span>
                 </div>
-                {{ macros.display_form_group(view, ['name'], true) }}
+                {{ widget.display_form_group(view, ['name'], true) }}
               </div>
               <div class="content">
                 <div class="ui right floated label make-default">Par défaut</div>

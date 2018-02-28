@@ -124,6 +124,20 @@ body {
             }
         }
     }
+
+    .ui {
+        &.top.bar {
+            .search.field {
+                max-width     : 3em;
+                transition: all 0.2s ease;
+
+                &.focused,
+                &:hover {
+                    max-width: 300px;
+                }
+            }
+        }
+    }
 }
 
 .toolbar {

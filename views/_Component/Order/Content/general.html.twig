@@ -1,10 +1,8 @@
 <div class="ui two column stackable stretched grid">
     <div class="eight wide column">
-        <div class="ui clearing segment with form">
-            <h4 class="ui header">Informations générales</h4>
-            <div class="ui divider"></div>
-            {{ macros.field_group(view, ['code', 'source'], true) }}
-        </div>
+
+        {{ widget.card('Informations générales', view, ['code', 'source'], true)}}
+
     </div>
     <div class="eight wide column">
         <div class="ui clearing segment with form">
@@ -13,7 +11,7 @@
                 Compte <a href="/contact" class="ui"><i class="external link alternate icon"></i></a>
             </h4>
             <div class="ui divider"></div>
-            {{ macros.field_group(account, ['firstname', 'lastname', 'email']) }}
+            {{ widget.field_group(account, ['firstname', 'lastname', 'email']) }}
 
             <form class="ui form data" method="POST" action="">
                 <div class="ui floating dropdown labeled search icon blue button">
