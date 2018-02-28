@@ -7,7 +7,10 @@
 {% block stylesheets %}
     {{  parent() }}
 
-    {# Dependencies #}
+    {# ################################################################################ #}
+    {#     DEPENDENCIES                                                                 #}
+    {# ################################################################################ #}
+    
     <link rel="stylesheet" href="/dep/semantic-ui-calendar/dist/calendar.min.css"/>
 {% endblock %}
 
@@ -19,7 +22,9 @@
     {#     SIDE BAR                                                                     #}
     {# ################################################################################ #}
 
-    {% include '@Template/Layout/Blocks/side-bar.html.twig' %}
+    {% use '@Template/Layout/Blocks/side-bar.html.twig' %}
+
+    {{ block('side_bar') }}
 
     {# ################################################################################ #}
     {#     TOP BAR                                                                      #}
@@ -27,9 +32,7 @@
 
     {% use '@Template/Layout/Blocks/top-bar.html.twig' %}
 
-    {% block top_bar %}
-        {{ parent() }}
-    {% endblock top_bar %}
+    {{ block('top_bar') }}
 
     {# ################################################################################ #}
     {#     PAGE PUSHER                                                                  #}
@@ -66,11 +69,17 @@
 {% block javascripts %}
     {{ parent() }}
 
-    {# Dependencies #}
+    {# ################################################################################ #}
+    {#     DEPENDENCIES                                                                 #}
+    {# ################################################################################ #}
+
     <script src="/dep/jquery-address/src/jquery.address.js"></script>
     <script src="/dep/semantic-ui-calendar/dist/calendar.min.js"></script>
 
-    {# Custom features #}
+    {# ################################################################################ #}
+    {#     CUSTOM FEATURES                                                              #}
+    {# ################################################################################ #}
+
     <script src="/js/features/accordions.js"></script>
     <script src="/js/features/forms.js"></script>
     <script src="/js/features/modal-confirmation.js"></script>
