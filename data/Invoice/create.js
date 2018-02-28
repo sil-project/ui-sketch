@@ -27,38 +27,28 @@ module.exports = {
     company_name: {
       label: 'name',
       value: 'Libre Informatique SARL',
-      form: {
-        type: 'text'
-      }
+      type: 'text'
     },
     siret: {
       label: 'Siret',
       value: '732 829 320',
-      form: {
-        type: 'text'
-      }
+      type: 'text'
     },
     address: {
       label: 'Address',
       value: '7 allée Jean Lagadic 29000 Quimper',
-      form: {
-        type: 'text'
-      }
+      type: 'text'
     },
     vat_number: {
       label: 'VAT number',
       value: 'FR 28 732 829 320',
-      form: {
-        type: 'text'
-      }
+      type: 'text'
     },
     currency: {
       label: 'Currency',
       value: 'Euro',
-      form: {
-        type: 'select',
-        values: ['Euro', 'USD', 'GBP']
-      },
+      type: 'select',
+      values: ['Euro', 'USD', 'GBP']
     },
     status: {
       label: 'Status',
@@ -68,38 +58,28 @@ module.exports = {
       label: 'Tax rate',
       value: '19,6',
       unit: '%',
-      form: {
-        type: 'text'
-      }
+      type: 'text'
     },
     due_date: {
       label: 'Limit',
       value: '30',
       unit: 'days',
-      form: {
-        type: 'number'
-      }
+      type: 'number'
     },
     payment_terms: {
       label: 'Conditions',
       value: 'A penalty of 10% of the amount will be charged for each week after the initial delay',
-      form: {
-        type: 'textarea'
-      }
+      type: 'textarea'
     },
     customer_firstname: {
       label: 'First name',
       value: 'Patrick',
-      form: {
-        type: 'text'
-      }
+      type: 'text'
     },
     customer_lastname: {
       label: 'Last name',
       value: 'Puydebas',
-      form: {
-        type: 'text'
-      }
+      type: 'text'
     }
   }
 };

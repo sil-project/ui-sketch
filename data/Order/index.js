@@ -22,17 +22,13 @@ module.exports = {
         code: {
             label: 'Référence',
             value: 'CMD00000512',
-            form: {
-                type: 'hidden'
-            }
+            type: 'hidden'
         },
         source: {
             label: 'Source',
             value: 'VEL - Vente en ligne',
-            form: {
-                type: 'select',
-                values: ['N/A', 'VEL - Vente en ligne', 'VPC - Vente par correspondance', 'VSP - Vente sur place']
-            }
+            type: 'select',
+            values: ['N/A', 'VEL - Vente en ligne', 'VPC - Vente par correspondance', 'VSP - Vente sur place']
         },
         state: {
             label: 'Brouillon',
@@ -57,46 +53,34 @@ module.exports = {
         street: {
             label: 'Rue',
             value: '7 allée Jean Lagadic',
-            form: {
-                type: 'text'
-            }
+            type: 'text'
         },
         postCode: {
             value: 29000,
             label: 'Code postal',
-            form: {
-                type: 'text'
-            }
+            type: 'text'
         },
         city: {
             value: 'Quimper',
             label: 'Ville',
-            form: {
-                type: 'text'
-            }
+            type: 'text'
         }
     },
     deliveryAddress: {
         street: {
             label: 'Rue',
             value: '7 allée Jean Lagadic',
-            form: {
-                type: 'text'
-            }
+            type: 'text'
         },
         postCode: {
             value: 29000,
             label: 'Code postal',
-            form: {
-                type: 'text'
-            }
+            type: 'text'
         },
         city: {
             value: 'Quimper',
             label: 'Ville',
-            form: {
-                type: 'text'
-            }
+            type: 'text'
         }
     },
     list: {
@@ -116,9 +100,7 @@ module.exports = {
                 name: 'state',
                 label: 'État',
                 type: 'select',
-                form: {
-                    values: ['Valide', 'Brouillon', 'Annulée', 'Archivée']
-                }
+                values: ['Valide', 'Brouillon', 'Annulée', 'Archivée']
             }
         ],
         headers: [

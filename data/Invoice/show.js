@@ -23,9 +23,7 @@ module.exports = {
     name: {
       label: 'name',
       value: 'dfsg',
-      form: {
-        type: 'text'
-      }
+      type: 'text'
     }
   }
 };

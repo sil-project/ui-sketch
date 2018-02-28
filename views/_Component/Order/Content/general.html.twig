@@ -8,7 +8,10 @@
         <div class="ui clearing segment with form">
 
             <h4 class="ui header">
-                Compte <a href="/contact" class="ui"><i class="external link alternate icon"></i></a>
+                Compte
+                <a href="/contact" class="ui">
+                    <i class="external link alternate icon"></i>
+                </a>
             </h4>
             <div class="ui divider"></div>
             {{ widget.field_group(account, ['firstname', 'lastname', 'email']) }}
@@ -65,14 +68,22 @@
                 </div>
 
                 <div class="ui divider"></div>
-                <button class="ui button labeled icon submit positive right floated" type="submit">
-                    <i class="save icon"></i>
-                    Enregistrer
-                </button>
-                <a class="ui button labeled icon left floated close">
-                    <i class="undo icon"></i>
-                    Annuler
-                </a>
+
+                {{ widget.field('submit', {
+                    label: 'Enregistrer',
+                    form: {
+                        class: 'right floated',
+                        icon: 'save'
+                    }
+                }) }}
+
+                {{ widget.field('button', {
+                    label: 'Annuler',
+                    form: {
+                        class: 'left floated close',
+                        icon: 'undo'
+                    }
+                }) }}
             </form>
         </div>
     </div>

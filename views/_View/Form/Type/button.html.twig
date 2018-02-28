@@ -2,10 +2,10 @@
 {#    INPUT CLASS                                                                        #}
 {# ##################################################################################### #}
 
-{% set fieldClass = 'ui button submit positive' %}
+{% set fieldClass = 'ui button' %}
 
 {% if field.class is defined %}
-    {% set fieldClass = 'ui button submit positive ' ~ field.class %}
+    {% set fieldClass = 'ui button ' ~ field.class %}
 {% endif %}
 
 {# ##################################################################################### #}
@@ -23,7 +23,7 @@
 {#    INPUT                                                                              #}
 {# ##################################################################################### #}
 
-<button class="{{ fieldClass }}" type="submit" tabindex="1">
+<button class="{{ fieldClass }}" tabindex="1">
 
     {% if fieldIcon is not null %}
         <i class="{{ fieldIcon }} icon"></i>

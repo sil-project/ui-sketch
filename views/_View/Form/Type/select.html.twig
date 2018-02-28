@@ -4,15 +4,15 @@
 
 {% set fieldClass = 'field' %}
 
-{% if field.form.class is defined %}
-    {% set fieldClass = 'field ' ~ field.form.class %}
+{% if field.class is defined %}
+    {% set fieldClass = 'field ' ~ field.class %}
 {% endif %}
 
-{% if field.form.inline == true %}
+{% if field.inline == true %}
     {% set fieldClass = fieldClass ~ ' inline' %}
 {% endif %}
 
-{% if field.form.readonly %}
+{% if field.readonly %}
     {% set fieldClass = fieldClass ~ ' readonly' %}
 {% endif %}
 
@@ -22,7 +22,7 @@
 
 {% set tabindex = 1 %}
 
-{% if field.form.readonly %}
+{% if field.readonly %}
     {% set tabindex = -1 %}
 {% endif %}
 
@@ -36,14 +36,14 @@
         <label>{{ field.label }}</label>
     {% endif %}
 
-    <div class="ui selection dropdown{% if field.form.disabled %} disabled{% endif %}" tabindex="{{ tabindex}}">
+    <div class="ui selection dropdown{% if field.disabled %} disabled{% endif %}" tabindex="{{ tabindex}}">
         <input name="{{ field.name }}" type="hidden">
         <i class="dropdown icon"></i>
 
         <div class="default text">{{ field.value }}</div>
 
         <div class="menu">
-            {% for value in field.form.values %}
+            {% for value in field.values %}
 
                 <div class="item" data-value="{{ value }}">
                     {{ value }}

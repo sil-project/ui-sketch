@@ -4,15 +4,15 @@
 
 {% set fieldClass = 'field' %}
 
-{% if field.form.class is defined %}
-    {% set fieldClass = 'field ' ~ field.form.class %}
+{% if field.class is defined %}
+    {% set fieldClass = 'field ' ~ field.class %}
 {% endif %}
 
-{% if field.form.inline == true %}
+{% if field.inline == true %}
     {% set fieldClass = fieldClass ~ ' inline' %}
 {% endif %}
 
-{% if field.form.readonly %}
+{% if field.readonly %}
     {% set fieldClass = fieldClass ~ ' readonly' %}
 {% endif %}
 
@@ -22,7 +22,7 @@
 
 {% set tabindex = 1 %}
 
-{% if field.form.readonly %}
+{% if field.readonly %}
     {% set tabindex = -1 %}
 {% endif %}
 
@@ -40,7 +40,7 @@
         <textarea
             name="{{ field.name }}"
             tabindex="{{ tabindex }}"
-            {% if field.form.disabled %} disabled="disabled"{% endif %}
+            {% if field.disabled %} disabled="disabled"{% endif %}
         >{{ field.value }}</textarea>
     </div>
 {% endspaceless %}

@@ -36,9 +36,7 @@ module.exports = {
                 name: 'state',
                 label: 'État',
                 type: 'select',
-                form: {
-                    values: ['Brouillon', 'Validée', 'Annulée', 'Archivée', 'Complète']
-                }
+                values: ['Brouillon', 'Validée', 'Annulée', 'Archivée', 'Complète']
             }
         ],
         headers: [
