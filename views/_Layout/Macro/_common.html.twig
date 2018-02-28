@@ -1,55 +1,108 @@
+{# ##################################################################################### #}
+{#                                                                                       #}
+{#     MACRO field_group                                                                 #}
+{#                                                                                       #}
+{#     Displays a field group (and its form group if editable) in a html stripped table  #}
+{#                                                                                       #}
+{# ##################################################################################### #}
+
 {% macro field_group(view, fields, editable, withSubmit) %}
-    {% if withSubmit is not defined %}
-      {% set withSubmit = true %}
-    {% endif %}
+
     {% import _self as common %}
+
+    {% if withSubmit is not defined %}
+        {% set withSubmit = true %}
+    {% endif %}
+
     {% spaceless %}
+
         {{ common.display_show_group(view, fields) }}
+
         {% if editable == true %}
             {{ common.display_form_group(view, fields, withSubmit) }}
         {% endif %}
+
     {% endspaceless %}
+
 {% endmacro %}
 
+{# ##################################################################################### #}
+{#                                                                                       #}
+{#     MACRO display_show_group                                                          #}
+{#                                                                                       #}
+{#     Displays a show group in a html stripped table                                    #}
+{#                                                                                       #}
+{# ##################################################################################### #}
+
 {% macro display_show_group(view, fields) %}
+
     {% spaceless %}
+
         <table class="ui very basic striped celled table show data">
             <tbody>
+
                 {% for fieldname in fields %}
                     <tr>
+
                         {% set field = attribute(view, fieldname) %}
+
                         <td class="right aligned four wide">
                             <strong>{{ field.label }}</strong>
                         </td>
-                        <td>{{ field.value }}</td>
+
+                        <td>
+                            {{ field.value }}
+                        </td>
+
                     </tr>
                 {% endfor %}
+
             </tbody>
         </table>
+
     {% endspaceless %}
+
 {% endmacro %}
 
+{# ##################################################################################### #}
+{#                                                                                       #}
+{#     MACRO display_form_group                                                          #}
+{#                                                                                       #}
+{#     Displays a form group in a standard form                                          #}
+{#                                                                                       #}
+{# ##################################################################################### #}
+
 {% macro display_form_group(view, fields, withSubmit) %}
+
     {% spaceless %}
+
         <form class="ui form data" method="POST" action="">
+
             {% for fieldname in fields %}
+
                 {% set field = attribute(view, fieldname) %}
 
                 {% include '@Template/_View/Form/Type/' ~ field.form.type ~ '.html.twig' with {
                     'field' : field
                 } %}
+
             {% endfor %}
+
             {% if withSubmit == true %}
+
                 <div class="ui divider"></div>
-                <button class="ui button labeled icon submit positive right floated" type="submit">
-                    <i class="save icon"></i>
-                    Enregistrer
-                </button>
+
+                {% include '@Template/_View/Form/Type/submit.html.twig' %}
+
                 <a class="ui button labeled icon left floated close">
                     <i class="undo icon"></i>
                     Annuler
                 </a>
+
             {% endif %}
+
         </form>
+
     {% endspaceless %}
+
 {% endmacro %}
