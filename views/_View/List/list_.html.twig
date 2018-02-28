@@ -1,0 +1,51 @@
+{% extends "@Template/_Layout/layout.html.twig" %}
+
+{% block content %}
+
+    {% block page_header %}
+
+        <div class="ui grid">
+            <div class="twelve wide column">
+                <h1 class="ui header">
+                    <i class="rounded sticky {{page.header.icon}} outline icon"></i>
+                    <div class="content">
+                        {{ page.header.title}}
+                        <div class="sub header">{{ page.header.description}}</div>
+                    </div>
+                </h1>
+            </div>
+
+            {% block page_actions %}
+
+                <div class="four wide column">
+                    {% block page_actions_content %}{% endblock %}
+                </div>
+
+            {% endblock %}
+
+        </div>
+
+    {% endblock %}
+
+    <div class="toolbar">
+        {% block page_toolbar %}
+
+            {% include "@Template/_View/List/Filter/filter_bar.html.twig" %}
+
+        {% endblock page_toolbar %}
+    </div>
+
+    <div class="ui divider"></div>
+
+    {% block page_content %}
+
+        {% include "@Template/_View/List/Table/table.html.twig" %}
+
+    {% endblock %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/js/list.js"></script>
+{% endblock %}

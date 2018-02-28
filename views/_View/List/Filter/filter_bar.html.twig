@@ -1,0 +1,13 @@
+<div class="ui menu">
+    {% if list.filters|length > 0 %}
+        {% include '@Template/_View/List/Filter/filter_list.html.twig' %}
+    {% endif %}
+
+    <div class="right menu">
+        {% include '@Template/_View/List/Table/export.html.twig' %}
+    </div>
+
+</div>
+
+
+{% include '@Template/_View/List/Filter/form.html.twig' %}
