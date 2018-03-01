@@ -84,9 +84,7 @@ module.exports = {
         }
     },
     list: {
-        options: {
-            actions: []
-        },
+        actions: [],
         filters: [
             {
                 name: 'name',

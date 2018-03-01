@@ -74,9 +74,7 @@ module.exports = {
         }
     },
     list: {
-        options: {
-            actions: []
-        },
+        actions: [],
         headers: [
             {
                 name: 'name',

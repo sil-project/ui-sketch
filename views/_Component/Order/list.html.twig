@@ -1,7 +1,5 @@
 {% extends "@Template/_View/List/list.html.twig" %}
 
-
-
 {% block page_header %}
     <div class="ui basic right floated">
         <div class="ui labeled icon top left dropdown button primary">
@@ -17,4 +15,15 @@
     </div>
 
     {{ parent() }}
+{% endblock %}
+
+{% block page_content %}
+
+    {{ widget.table({
+        headers: list.headers,
+        data: list.elements,
+        actions: list.actions,
+        allowSelection: true
+    }) }}
+
 {% endblock %}

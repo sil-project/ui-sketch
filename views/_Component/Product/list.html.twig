@@ -1,4 +1,4 @@
-{% extends "@Template/_View/Show/show.html.twig" %}
+{% extends "@Template/_View/List/list.html.twig" %}
 
 
 {% block page_header %}
@@ -19,18 +19,12 @@
 {% endblock %}
 
 {% block page_content %}
-    <div class="ui stackable grid">
 
-        <div class="sixteen wide column">
+    {{ widget.table({
+        headers: list.headers,
+        data: list.elements,
+        actions: list.actions,
+        allowSelection: true
+    }) }}
 
-            {% include '@Template/_View/List/list.html.twig' %}
-
-        </div>
-
-    </div>
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    <script src="/js/list.js"></script>
 {% endblock %}

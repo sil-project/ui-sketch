@@ -15,14 +15,12 @@ module.exports = {
         }
     },
     list: {
-        options: {
-            actions: [
-                {
-                    label: 'Voir',
-                    icon: 'eye'
-                }
-            ]
-        },
+        actions: [
+            {
+                label: 'Voir',
+                icon: 'eye'
+            }
+        ],
         filters: [
             {
                 name: 'name',

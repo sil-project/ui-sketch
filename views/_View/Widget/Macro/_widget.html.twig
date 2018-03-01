@@ -213,3 +213,26 @@
     } %}
 
 {% endmacro %}
+
+
+{# ##################################################################################### #}
+{#                                                                                       #}
+{#     MACRO table                                                                       #}
+{#                                                                                       #}
+{#     Displays a table                                                                  #}
+{#                                                                                       #}
+{# ##################################################################################### #}
+
+{% macro table(_parameters) %}
+
+    {% set parameters = {
+        headers: [],
+        data: [],
+        allowSelection: true
+    }|merge(_parameters) %}
+
+    {% include '@Template/_View/Widget/Table/table.html.twig' with {
+        table : parameters
+    } %}
+
+{% endmacro %}

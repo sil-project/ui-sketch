@@ -42,17 +42,17 @@
             <div class="ui segment">
                 <div class="step content">
                     <div class="step active" data-step="id">
-                        {{ widget.display_form_group(create, ['name', 'description', 'code']) }}
+                        {{ widget.form_group(create, ['name', 'description', 'code']) }}
                     </div>
                     <div class="step" data-step="options">
-                        {{ widget.display_form_group(create, ['options']) }}
+                        {{ widget.form_group(create, ['options']) }}
                     </div>
                     <div class="step ui grid" data-step="variants">
                         <div class="seven wide column">
-                            {{ widget.display_form_group(create, ['optionsValues_Couleur','optionsValues_Taille']) }}
+                            {{ widget.form_group(create, ['optionsValues_Couleur','optionsValues_Taille']) }}
                         </div>
                         <div class="seven wide column">
-                            {{ widget.display_form_group(create, ['optionsValues_Packaging','optionsValues_Pointure']) }}
+                            {{ widget.form_group(create, ['optionsValues_Packaging','optionsValues_Pointure']) }}
                         </div>
                         <div class="ui divider"></div>
                         <div class="ui center aligned basic segment">

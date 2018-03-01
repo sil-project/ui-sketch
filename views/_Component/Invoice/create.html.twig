@@ -65,7 +65,7 @@
               <span>Customer info</span>
             </div>
             <div class="ui divider"></div>
-            {{ widget.display_form_group(view, ['customer_firstname', 'customer_lastname', 'address', 'vat_number'], false) }}
+            {{ widget.form_group(view, ['customer_firstname', 'customer_lastname', 'address', 'vat_number'], false) }}
           </div>
           <div class="content"></div>
         </div>
@@ -76,7 +76,7 @@
             <span>Payment terms</span>
           </div>
           <div class="ui divider"></div>
-          {{ widget.display_form_group(view, ['currency', 'tax_rate', 'due_date', 'payment_terms'], false) }}
+          {{ widget.form_group(view, ['currency', 'tax_rate', 'due_date', 'payment_terms'], false) }}
         </div>
         <div class="content"></div>
       </div>

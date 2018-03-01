@@ -31,7 +31,7 @@
                             <div class="column left aligned">
                                 <h3 class="ui header">Informations générales</h3>
                                 <div class="ui divider"></div>
-                                {{ widget.display_form_group(create, ['source']) }}
+                                {{ widget.form_group(create, ['source']) }}
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                             <div class="seven wide column left aligned">
                                 <h3 class="ui header">Nouveau du compte</h3>
                                 <div class="ui divider"></div>
-                                {{ widget.display_form_group(create, ['account_firstname', 'account_lastname', 'account_email']) }}
+                                {{ widget.form_group(create, ['account_firstname', 'account_lastname', 'account_email']) }}
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                             <div class="seven wide column left aligned">
                                 <h3 class="ui header">Adresse de facturation</h3>
                                 <div class="ui divider"></div>
-                                {{ widget.display_form_group(create, ['invoiceAddress_street','invoiceAddress_postCode', 'invoiceAddress_city']) }}
+                                {{ widget.form_group(create, ['invoiceAddress_street','invoiceAddress_postCode', 'invoiceAddress_city']) }}
                             </div>
                             <div class="column center aligned">
                                 <div class="ui vertical divider">
@@ -122,7 +122,7 @@
                             <div class="seven wide column left aligned">
                                 <h3 class="ui header">Adresse de livraison</h3>
                                 <div class="ui divider"></div>
-                                {{ widget.display_form_group(create, ['deliveryAddress_street','deliveryAddress_postCode', 'deliveryAddress_city']) }}
+                                {{ widget.form_group(create, ['deliveryAddress_street','deliveryAddress_postCode', 'deliveryAddress_city']) }}
                             </div>
                         </div>
                     </div>
@@ -202,15 +202,12 @@
                                         <div class="ui header">
                                             Source
                                         </div>
-                                        {% include '@Template/_View/Form/Type/text.html.twig' with {
-                                            field : {
-                                                value: 'N/A',
-                                                form: {
-                                                    readonly: true,
-                                                    class: 'ui input fluid'
-                                                }
-                                            }
-                                        } %}
+
+                                        {{ widget.field('text', {
+                                            value: 'N/A',
+                                            readonly: true,
+                                            class: 'ui input fluid'
+                                        }) }}
 
                                     </div>
                                     <div class="eight wide column">
@@ -242,38 +239,30 @@
 
                                                 <p>
 
-                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
-                                                        field : {
-                                                            value: '7 Allée Jean Lagadic',
-                                                            form: {
-                                                                readonly: true,
-                                                                class: 'ui input fluid'
-                                                            }
-                                                        }
-                                                    } %}
+                                                    {{ widget.field('text', {
+                                                        value: '7 Allée Jean Lagadic',
+                                                        readonly: true,
+                                                        class: 'ui input fluid'
+                                                    }) }}
 
                                                 </p>
                                                 <p>
-                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
-                                                        field : {
-                                                            value: '29000',
-                                                            form: {
-                                                                readonly: true,
-                                                                class: 'ui input fluid'
-                                                            }
-                                                        }
-                                                    } %}
+
+                                                    {{ widget.field('text', {
+                                                        value: '29000',
+                                                        readonly: true,
+                                                        class: 'ui input fluid'
+                                                    }) }}
+
                                                 </p>
                                                 <p>
-                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
-                                                        field : {
-                                                            value: 'QUIMPER',
-                                                            form: {
-                                                                readonly: true,
-                                                                class: 'ui input fluid'
-                                                            }
-                                                        }
-                                                    } %}
+
+                                                    {{ widget.field('text', {
+                                                        value: 'QUIMPER',
+                                                        readonly: true,
+                                                        class: 'ui input fluid'
+                                                    }) }}
+
                                                 </p>
                                             </div>
 
@@ -282,37 +271,31 @@
                                                     Adresse de livraison
                                                 </div>
                                                 <p>
-                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
-                                                        field : {
-                                                            value: '7 Allée Jean Lagadic',
-                                                            form: {
-                                                                readonly: true,
-                                                                class: 'ui input fluid'
-                                                            }
-                                                        }
-                                                    } %}
+
+                                                    {{ widget.field('text', {
+                                                        value: '7 Allée Jean Lagadic',
+                                                        readonly: true,
+                                                        class: 'ui input fluid'
+                                                    }) }}
+
                                                 </p>
                                                 <p>
-                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
-                                                        field : {
-                                                            value: '29000',
-                                                            form: {
-                                                                readonly: true,
-                                                                class: 'ui input fluid'
-                                                            }
-                                                        }
-                                                    } %}
+
+                                                    {{ widget.field('text', {
+                                                        value: '29000',
+                                                        readonly: true,
+                                                        class: 'ui input fluid'
+                                                    }) }}
+
                                                 </p>
                                                 <p>
-                                                    {% include '@Template/_View/Form/Type/text.html.twig' with {
-                                                        field : {
-                                                            value: 'QUIMPER',
-                                                            form: {
-                                                                readonly: true,
-                                                                class: 'ui input fluid'
-                                                            }
-                                                        }
-                                                    } %}
+
+                                                    {{ widget.field('text', {
+                                                        value: 'QUIMPER',
+                                                        readonly: true,
+                                                        class: 'ui input fluid'
+                                                    }) }}
+                                                    
                                                 </p>
                                             </div>
                                         </div>

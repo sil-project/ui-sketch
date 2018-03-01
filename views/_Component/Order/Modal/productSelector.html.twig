@@ -5,7 +5,14 @@
     </div>
     <div class="content">
         <div class="description">
-            {% include "@Template/_View/List/Table/table.html.twig" %}
+
+            {{ widget.table({
+                headers: list.headers,
+                data: list.elements,
+                actions: list.actions,
+                allowSelection: true
+            }) }}
+
         </div>
     </div>
     <div class="actions">
