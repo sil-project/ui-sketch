@@ -4,8 +4,13 @@ module.exports = {
       icon: "users",
       children: [{
         label: "Fiche d'un contact",
-        icon: 'user',
-        href: '/contact',
+        icon: "user",
+        href: "/contact",
+        children: []
+      },{
+        label: "Fiche d'un compte",
+        icon: "book",
+        href: "/account",
         children: []
       }]
     }, {
