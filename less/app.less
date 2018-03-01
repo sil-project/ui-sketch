@@ -1,5 +1,5 @@
 @import 'site.variables';
-@import 'List/list';
+
 /* latin-ext */
 @font-face {
     font-family  : 'Raleway';
@@ -138,6 +138,16 @@ body {
             }
         }
     }
+
+    .ui {
+        &.filters {
+            display: none;
+            .ui.filter {
+                display: none;
+            }
+        }
+    }
+
 }
 
 .toolbar {
