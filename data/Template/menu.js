@@ -41,6 +41,20 @@ module.exports = {
       href: '/order',
       children: []
     }]
+  },{
+    label: "Gestion des stocks",
+    icon: "cubes",
+    children: [{
+      label: "Entrepôt n°1",
+      icon: 'industry',
+      href: '/stock/warehouse',
+      children: []
+    },{
+      label: "Emplacement Etagère n°1",
+      icon: 'map marker alternate',
+      href: '/stock/location',
+      children: []
+    }]
   }
 
   ]

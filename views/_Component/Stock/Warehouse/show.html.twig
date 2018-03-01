@@ -1,0 +1,74 @@
+{% extends "@Template/_View/Show/show.html.twig" %}
+
+{% block page_header %}
+
+  <div class="ui grid">
+    <div class="twelve wide column">
+      <h1 class="ui header">
+        <i class="rounded sticky {{page.header.icon}} outline icon"></i>
+        <div class="content">
+          {{ page.header.title}}
+
+          <div class="sub header">
+            {{ page.header.description}}
+          </div>
+        </div>
+      </h1>
+    </div>
+    <div class="four wide column">
+      <div class="ui basic right floated">
+        <div class="ui labeled icon top left dropdown button primary">
+          <i class="cogs icon"></i>
+          <span class="text">Actions</span>
+          <div class="menu">
+            <a class="item" href="/order/create">
+              <i class="plus circle icon"></i>
+              Nouvel entrepôt
+            </a>
+            <a class="item" href="/order">
+              <i class="archive icon"></i>
+              Archiver
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block page_content %}
+  <div class="ui stackable padded grid">
+
+    <div class="twelve wide column">
+      <div class="ui two column stackable stretched grid">
+
+        <div class="eight wide column">
+          {{ widget.card('Informations générales', view.warehouse, ['name','code'], true)}}
+          {{ widget.card('Adresse',view.warehouse.address, ['street', 'postCode', 'city'], true) }}
+        </div>
+
+        <div class="eight wide column">
+          <div class="ui clearing segment">
+            <h4 class="ui header">
+              Emplacements
+              <a class="ui right floated toggler">
+                <i class="plus icon center aligned"></i>
+              </a>
+            </h4>
+            <div class="ui divider"></div>
+            <div class="ui two column grid">
+              <div class="column">
+                {% include "@Template/_Component/Stock/Warehouse/Content/internal-locations.html.twig" %}
+              </div>
+              <div class="column">
+                {% include "@Template/_Component/Stock/Warehouse/Content/virtual-locations.html.twig" %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}
