@@ -1,0 +1,27 @@
+<div class="ui modal" data-modal="productSelector">
+    <i class="close icon"></i>
+    <div class="header">
+        Rechercher un produit
+    </div>
+    <div class="content">
+        <div class="description">
+
+            {{ widget.table({
+                headers: list.headers,
+                data: list.elements,
+                actions: list.actions,
+                allowSelection: true
+            }) }}
+
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui negative deny button">
+            Annuler
+        </div>
+        <div class="ui positive right labeled icon button">
+            Sélectionner
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+<div class="ui column stackable stretched grid">
+    <div class="sixteen wide column">
+        <div class="ui clearing segment with form">
+            <h4 class="ui header">Liste des mouvements</h4>
+            <div class="ui divider"></div>
+            <table class="ui blue table show data">
+                <thead>
+                    <tr>
+                        <th>Désignation du produit</th>
+                        <th class="right aligned">N° de lot</th>
+                        <th class="right aligned">Origine</th>
+                        <th class="right aligned">Destination</th>
+                        <th class="right aligned">Quantité</th>
+                        <th class="right aligned">Quantité réservée</th>
+                        <th class="right aligned">État</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a class="ui blue label">AWE-INC-0256</a>
+                            The awesome and incredible product 256
+                        </td>
+                        <td class="right aligned">AK3-322</td>
+                        <td class="right aligned">
+                            <a class="ui label">Etagère n°1</a>
+                        </td>
+                        <td class="right aligned">
+                            <a class="ui label">Emplacement Clients</a>
+                        </td>
+                        <td class="right aligned">18 Unité(s)</td>
+                        <td class="right aligned">
+                            -
+                        </td>
+                        <td class="right aligned">
+                            <a class="ui label">Plannifié</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="ui blue label">AWE-INC-0257</a>
+                            The awesome and incredible product 257
+                        </td>
+                        <td class="right aligned">AK3-321</td>
+                        <td class="right aligned">
+                            <a class="ui label">Etagère n°5</a>
+                        </td>
+                        <td class="right aligned">
+                            <a class="ui label">Emplacement Clients</a>
+                        </td>
+                        <td class="right aligned">18 Unité(s)</td>
+                        <td class="right aligned">
+                            -
+                        </td>
+                        <td class="right aligned">
+                            <a class="ui label">Plannifié</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <form class="ui form data" method="POST" action="">
+                <table class="ui blue table data">
+                    <thead>
+                        <tr>
+                            <th>Désignation du produit</th>
+                            <th class="right aligned">N° de lot</th>
+                            <th class="right aligned">Origine</th>
+                            <th class="right aligned">Destination</th>
+                            <th class="right aligned">Quantité</th>
+                            <th class="right aligned">Quantité réservée</th>
+                            <th class="right aligned">État</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a class="ui blue label">AWE-INC-0257</a>
+                                The awesome and incredible product 257
+                            </td>
+                            <td class="right aligned">AK3-321</td>
+                            <td class="right aligned">
+                                <a class="ui label">Etagère n°5</a>
+                            </td>
+                            <td class="right aligned">
+                                <a class="ui label">Emplacement Client</a>
+                            </td>
+                            <td class="right aligned">18 Unité(s)</td>
+                            <td class="right aligned">
+                                -
+                            </td>
+                            <td class="right aligned">
+                                <a class="ui label">Plannifié</a>
+                            </td>
+                            <td>
+                                <button class="ui icon red mini button">
+                                    <i class="trash icon"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="ui blue label">AWE-INC-0257</a>
+                                The awesome and incredible product 257
+                            </td>
+                            <td class="right aligned">AK3-321</td>
+                            <td class="right aligned">
+                                <a class="ui label">Etagère n°5</a>
+                            </td>
+                            <td class="right aligned">
+                                <a class="ui label">Emplacement Clients</a>
+                            </td>
+                            <td class="right aligned">18 Unité(s)</td>
+                            <td class="right aligned">
+                                -
+                            </td>
+                            <td class="right aligned">
+                                <a class="ui label">Plannifié</a>
+                            </td>
+                            <td class="collapsing">
+                                <button class="ui icon red mini button">
+                                    <i class="trash icon"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a class="ui button labeled icon green right floated" data-modal="productSelector">
+                    <i class="plus circle icon"></i>
+                    Ajouter un mouvement
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include '@Template/_Component/Stock/Operation/Modal/productSelector.html.twig' %}

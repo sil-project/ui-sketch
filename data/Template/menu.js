@@ -54,6 +54,11 @@ module.exports = {
       icon: 'map marker alternate',
       href: '/stock/location',
       children: []
+    },{
+      label: "Operation n° EXP-00C760E",
+      icon: 'truck',
+      href: '/stock/operation',
+      children: []
     }]
   }
 

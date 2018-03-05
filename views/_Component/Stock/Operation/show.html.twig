@@ -1,0 +1,92 @@
+{% extends "@Template/_View/Show/show.html.twig" %}
+{% block page_header %}
+
+    <div class="ui grid">
+        <div class="eleven wide column">
+            <h1 class="ui header">
+                <i class="rounded sticky {{page.header.icon}} outline icon"></i>
+                <div class="content">
+                    {{ page.header.title}}
+
+                    <div class="sub header">
+                        <a class="ui {{ view.state.color }} mini label">
+                            <i class="{{ view.state.icon }} icon"></i>{{ view.state.label|upper }}
+                        </a>
+                        {{ page.header.description}}
+                    </div>
+                </div>
+            </h1>
+        </div>
+        <div class="five wide column">
+
+            <div class="ui basic right floated">
+                <div class="ui floating top left mini button">Retour au brouillon</div>
+                <div class="ui floating top left mini button">Réserver les stocks</div>
+                <div class="ui labeled icon top left dropdown mini button primary">
+                    <i class="cogs icon"></i>
+                    <span class="text">Actions</span>
+                    <div class="menu">
+                        <a class="item" href="/order/create">
+                            <i class="plus circle icon"></i>
+                            Nouvelle opération
+                        </a>
+                        <a class="item" href="/order">
+                            <i class="archive icon"></i>
+                            Archiver
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="ui mini steps">
+        <div class="step">
+            <i class="edit outline icon"></i>
+            <div class="content">
+                <div class="title">Brouillon</div>
+            </div>
+        </div>
+        <div class="active step">
+            <i class="calendar check outline icon"></i>
+            <div class="content">
+                <div class="title">Plannifié</div>
+            </div>
+        </div>
+        <div class="step">
+            <i class="unlock alternate icon"></i>
+            <div class="content">
+                <div class="title">Stocks réservés</div>
+            </div>
+        </div>
+        <div class="step">
+            <i class="check icon"></i>
+            <div class="content">
+                <div class="title">Effectués</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_content %}
+    <div class="ui stackable padded grid">
+
+        <div class=" wide column">
+
+            <h2 class="ui header">
+                Général
+            </h2>
+            {% include "@Template/_Component/Stock/Operation/Content/general.html.twig" %}
+            <div class="ui divider"></div>
+
+            <h2 class="ui header">
+                Mouvements de stock
+            </h2>
+            {% include "@Template/_Component//Stock/Operation/Content/movements.html.twig" %}
+
+        </div>
+
+    </div>
+{% endblock %}
